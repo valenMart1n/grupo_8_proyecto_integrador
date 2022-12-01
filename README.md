@@ -7,3 +7,10 @@
     <li>Fruto, Esther</li>
     <li>Martin, Valentino</li>
 </ul>
+
+<h2>Sitios de referencia</h2>
+<ul>
+<li>MercadoLibre</li>
+<li>Adidas</li>
+<li>Dafiti</li>
+</ul>
