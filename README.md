@@ -6,6 +6,8 @@
     <li>Fernández, Federico Koichi</li>
     <li>Fruto, Esther</li>
     <li>Martin, Valentino</li>
+    <li>Gomez Chaves, Isaac</li>
+    <li>Torres, Joaquín Augusto</li>
 </ul>
 
 <h2>Sitios de referencia</h2>
