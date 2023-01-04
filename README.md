@@ -1,5 +1,6 @@
-<h2>Tienda de ropa básica e importante para el día a día</h2>
-<h3>Miembros:</h3>
+<h2>Temática</h2>
+<p>Tienda de ropa básica e importante para el día a día</p>
+<h2>Miembros:</h2>
 <ul>
     <li>Bove, Juan</li>
     <li>Farias, Iara</li>
@@ -16,3 +17,5 @@
 <li>Adidas</li>
 <li>Dafiti</li>
 </ul>
+<h2>Documento para organizar el trabajo</h2>
+<p>https://trello.com/invite/b/Ch97s2ol/ATTIaf5b20191c27c2ca8f66a70792359ef2833EBAF1/trabajo-integrador-grupo-8</p>
