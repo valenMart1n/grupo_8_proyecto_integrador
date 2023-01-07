@@ -1,0 +1,141 @@
+/*rgb(240, 240, 240);*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  'Roboto', 'Segoe UI';
+}
+
+header section{
+    text-align: center;
+      
+    margin-top: 40px;  
+}
+header section p{
+    display: none;
+
+}
+.icon i{
+    font-size: 35px;
+    padding: 5px;
+}
+main{
+   margin-left: 2em;
+   margin-top: 2em;
+}
+.menu{
+    width: 80vw;
+    height: 70vh;
+    border-style: solid;
+    border-color: rgb(58, 56, 56);
+    border-width: 1px;
+}
+.titulo{
+    display: flex;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: rgb(58, 56, 56);
+    
+    
+}
+.titulo p{
+    margin: 18px;
+    display: none;
+}
+.menu div h1{
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 7px;
+    font-size: 25px;
+    font-weight: 10;
+    color: rgb(58, 56, 56);
+}
+.datos{
+    margin: 10px;
+    
+}
+.datos2{
+   
+    display: flex;
+    justify-content: space-between;
+}
+
+.datos2 label, input{
+    margin-bottom: 15px;
+    font-size: 12px;
+    width: 50%;
+}
+.datos2 section{
+    width: 50%; 
+    height: 20px;
+}
+
+.datos2-button button{
+    padding: 5px;
+    margin-top: 15px;
+    background-color: white; 
+    width: 100%;
+    font-weight: bold;
+}
+.datos2-button, .datos2-p{
+    text-align: center;
+    font-size: 12px;
+}
+.datos2-p p{
+    margin-bottom: 5px;
+}
+
+@media (min-width: 430px){
+    header section{
+        text-align: left;
+        margin-left: 3em;
+
+    }
+    header section p{
+        display: block;
+        
+    }
+    .datos2 label, input{
+        font-size: 15px;
+    }
+    .datos2-button, .datos2-p{
+        font-size: 15px;
+    }
+    .menu{
+        max-width: 35em;
+    }
+    main{
+        display: flex;
+       justify-content: center;
+    }
+
+ 
+}
+@media (min-width: 769px){
+    .datos2 label, input{
+        font-size: 18px;
+    }
+    .icon i{
+        font-size: 40px;
+        padding: 8px;
+    }
+    .menu{
+        width: 35em;
+    }
+    header section{
+        border-bottom-style: solid;
+        border-bottom-color: rgb(58, 56, 56);
+        border-bottom-width: 1px;
+        margin-right: 3em;
+    }
+    .datos2-p p{
+        display: none;
+    }
+    
+    .titulo p{
+        display: block;
+    }
+    
+}
