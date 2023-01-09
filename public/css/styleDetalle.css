@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    text-align: center;
+}
+
+header .top-header{
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    justify-content: space-around;
+    
+}
+header div p{
+    display: none;
+}
+.icon button{
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 10px 0px 5px;
+    padding: 3px;
+    font-size: 20px;
+}
+header div.barra{
+    margin: 5px;
+    display: flex;
+   
+}
+header .form{
+    margin: 10px;
+    display:flex;
+    align-items: center;
+}
+
+
+header .form .input{
+    background-color: #FFF;
+    border: 1px solid #000;
+    outline: none;
+    color: #666;
+    padding: 2px;
+
+}
+header .form .submit{
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #666;
+    margin-left: 10px;
+    
+}
+.top-header{
+ width: 100%;
+}
+body h1{
+    margin: 10px;
+    font-size: 20px;
+}
+body p{
+    font-size: 12px;
+    margin: 10px;
+}
+body div.imagen{
+    margin-top: 2em;    
+}
+.datos{
+    display: flex;
+    justify-content: center;
+}
+.datos input, .datos2 input{
+    width: 30px;
+}
+.datos2{
+    display: none;
+}
+.opciones, .cantidad{
+    display: flex;
+}
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+
+.remeras{
+    width: 50vw;
+    height: 55vw;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.remera1, .remera2{
+    position: absolute;
+    width: 49vw;
+    height: 54vw;
+
+}
+
+.carrito{
+    text-align: center;
+}
+.carrito button{
+    padding: 5px;
+    font-size: 12px;
+
+}
+.parrafo{
+   
+    width: 65vw;
+    margin:auto;
+}
+
+.descripcion h2{
+    text-align: center;
+    font-size: 15px;
+}
+.remera3, .remera4{
+    display: none;
+}
+.remera2{
+
+    display: none;
+}
+
+@media (min-width: 430px){
+    .icon button{
+        padding: 6px;
+        font-size: 25px;
+        
+    }
+    header div p{
+        display: block;
+        font-size: 15px;
+    }
+    body h1{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    body p{
+        font-size: 15px;
+    }
+    header .input{
+        width: 12em;
+       
+    }
+    .carrito button{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .descripcion h2{
+        font-size: 20px;
+    }
+    .parrafo p{
+     font-size: 15px;
+    }
+    .precio, .opciones, .cantidad{
+        margin-bottom: 20px;
+    }
+    
+}
+@media (min-width: 769px){
+    .imagen{
+        justify-content:flex-start;
+    }
+    
+    .remeras{
+       
+        width: 511px;
+        height: 509px;
+        margin-left: 3em;
+    }
+   
+    .remera1, .remera2{
+        width: 508px;
+        height: 507px;
+        
+    }
+    .remera3, .remera4{
+        display: block;
+    }
+    .imagenes div{
+        width: 250px;
+        height: 250px;
+        border-style: solid;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-width: 1px;
+        border-color: #000;
+    }
+    .datos2{
+        display: block;
+    }
+    .datos{
+        display: none;
+    }
+    .descripcion{
+        display: none;
+    }
+    
+    .parrafo2{
+        width: 500px;
+    }
+
+    .descripcion2 h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    .datos2 input{
+        width: 60px;
+        
+    }
+    .descripcion2{
+        margin-top: 30px;
+    }
+    .carrito{
+        display: none;
+    }
+    .carrito2{
+        margin-left: 10px;
+       
+    }
+    .carrito2 button{
+        padding: 5px;
+        font-size: 20px;
+    
+    }
+   .remera3, .remera4{
+      width: 100%;
+      height:100%;
+    }
+    .remeras:hover .remera2{
+        display: block;
+     }
+
+}
+
+
+
+
+
