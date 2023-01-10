@@ -123,6 +123,7 @@ h2{
     align-self: center;
     justify-content: center;
     font-size: 25px;
+    
 }
 .imagen-producto{
     margin: 30px;
@@ -178,4 +179,15 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .header-searchbar{
+        display: block;
+    }
+
+    .sub-desc i{
+        display: flex;
+        justify-content: flex-start;
+    }
 }
