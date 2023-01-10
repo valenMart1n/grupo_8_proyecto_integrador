@@ -4,9 +4,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/styleProductCart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2c91db2581.js" crossorigin="anonymous"></script>
+    <title>Carrito de compras</title>
 </head>
 <body>
+
+    <header>
+        <section class="header-logo">
+            <div class="icon">
+                <a href="/"><button><i class="fa-solid fa-house"></i></button></a>
+                <p>Inicio</p>
+            </div>
+        </section>
+        <section>
+            <nav class="header-searchbar">
+                <div>
+                    <input type="text" name="searchbar" id="searchbar" placeholder="Buscar productos...">
+
+                </div>
+            </nav>
+        </section>
+        <section class="icon">
+            <a href="/login"><button><i class="fa-regular fa-user"></i></button></a>
+            <p>Iniciar Sesión</p>
+        </section>
+        <section class="icon" class="cart">
+            <a href="/productCart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
+            <p>Carrito de Compras</p>
+        </section>
+        </section>
+    </header>
+
+
+    <h1 class="titulo">Carrito de compras</h1>
+
+    <section class="producto">
+
+        <!-- Imagen de producto -->
+        <div class="desc-producto">
+
+            <article>
+            <!-- Imagen de producto -->
+                <div imagen>
+                    <img src="../public/images/Sin título.png" alt="">
+                </div>
+                    
+                <div class="sub-desc">
+                    <p>Articulo: Camiseta Seleccion Argentina</p>
+                    <label for="cantidad">Cantidad: </label>
+                    <input type="number" name="cantidad" min="1" id="">
+                    <p class="precio-unidad">$$$</p>
+                    <i class="fas fa-trash"></i>
+                </div >
+                <p class="borrar">Borrar</p>
+            </article>
+
+            <article>
+            <!-- Imagen de producto -->
+            <div imagen>
+                <img src="../public/images/Sin título.png" alt="">
+            </div>
+
+            <div class="sub-desc">
+                <p>Articulo: Camiseta Seleccion Argentina</p>
+                <label for="cantidad">Cantidad: </label>
+                <input type="number" name="cantidad" min="1" id="">
+                <p class="precio-unidad">$$$</p>
+                <i class="fas fa-trash"></i>
+            </div>
+            <p class="borrar">Borrar</p>
+            </article>
+            
+            <div class="subtotal">
+                
+                <p>Subtotal: $$$$</p> 
+            
+            </div>
+        </div>
+    </section>
+    <h2>informacion de compra</h2>
     
+    <section class="info-Compra">
+            <div class="contenedor-Infoo">
+                    <div class="envio">
+                <label for="calcular">Calcular: </label>
+                <input type="text" name="calcular" id="" placeholder="ingrese su codigo postal">
+                <p class="precio-Envio">$$$</p>
+                
+                <label for="direccion">Direccion: </label>
+                <input type="text" name="Direccion" id="direccion">
+                
+                <br>
+                <label for="telefono">Telefono</label>
+                <input type="tel" name="telefono" id="telefono">
+                
+                
+                <p>Retirar del local</p>
+                <select name="seleccionar" id="seleccionar">
+                    <option value="">Sí</option>
+                    <option value="">No</option>
+                </select>
+                </div>
+
+                <div class="precioEnvio">
+                    <p>Subtotal: $$</p>
+                    <p>Envio: $$</p>
+                    <p>Total: $$</p>
+                </div>
+            </div>
+        </div> 
+    </section>
 </body>
 </html>
