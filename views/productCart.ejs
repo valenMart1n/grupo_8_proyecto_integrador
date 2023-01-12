@@ -4,38 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/styleProductCart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2c91db2581.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styleProductCart.css">
+    <%- include("partials/head.ejs") %>
+    
     <title>Carrito de compras</title>
 </head>
 <body>
 
-    <header>
-        <section class="header-logo">
-            <div class="icon">
-                <a href="/"><button><i class="fa-solid fa-house"></i></button></a>
-                <p>Inicio</p>
-            </div>
-        </section>
-        <section>
-            <nav class="header-searchbar">
-                <div>
-                    <input type="text" name="searchbar" id="searchbar" placeholder="Buscar productos...">
-
-                </div>
-            </nav>
-        </section>
-        <section class="icon">
-            <a href="/login"><button><i class="fa-regular fa-user"></i></button></a>
-            <p>Iniciar Sesión</p>
-        </section>
-        <section class="icon" class="cart">
-            <a href="/productCart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
-            <p>Carrito de Compras</p>
-        </section>
-        </section>
-    </header>
+    <%- include("partials/header.ejs") %>
 
 
     <h1 class="titulo">Carrito de compras</h1>
@@ -48,7 +24,7 @@
             <article>
             <!-- Imagen de producto -->
                 <div imagen>
-                    <img src="../public/images/Sin título.png" alt="">
+                    <img src="/images/Sin título.png" alt="">
                 </div>
                     
                 <div class="sub-desc">
@@ -64,7 +40,7 @@
             <article>
             <!-- Imagen de producto -->
             <div imagen>
-                <img src="../public/images/Sin título.png" alt="">
+                <img src="/images/Sin título.png" alt="">
             </div>
 
             <div class="sub-desc">
@@ -117,4 +93,5 @@
         </div> 
     </section>
 </body>
+    <%- include("partials/footer.ejs") %>
 </html>

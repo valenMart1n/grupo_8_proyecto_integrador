@@ -1,26 +1,22 @@
 const express = require("express");
+
 const app = express();
-const path = require("path");
+
+let mainRoutes = require("./routes/main");
+let productosRoutes = require("./routes/productos");
+
+app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+
+app.use("/", mainRoutes);
+
+app.use("/productos", productosRoutes);
+
+app.use("/producutos", productosRoutes);
+
+app.use("/login", mainRoutes);
+
+app.use("/register", mainRoutes);
 
 app.listen(3030, () => console.log("Servidor Abierto en puerto 3030"));
-app.use(express.static("public"));
-app.get("/", function(req, res){
-    let htmlPath = path.resolve(__dirname, "./views/index.html");
-    res.sendFile(htmlPath);
-});
-app.get("/productDetail", function(req, res){
-    let htmlPath = path.resolve(__dirname, "./views/productDetail.html");
-    res.sendFile(htmlPath);
-});
-app.get("/productCart", function(req, res){
-    let htmlPath = path.resolve(__dirname, "./views/productCart.html");
-    res.sendFile(htmlPath);
-});
-app.get("/login", function(req, res){
-    let htmlPath = path.resolve(__dirname, "./views/login.html");
-    res.sendFile(htmlPath);
-});
-app.get("/register", function(req, res){
-    let htmlPath = path.resolve(__dirname, "./views/register.html");
-    res.sendFile(htmlPath);
-});

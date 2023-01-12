@@ -86,7 +86,10 @@ main{
 .datos2-p p{
     margin-bottom: 5px;
 }
-
+.copyright p{
+    text-align: center;
+    font-size: 12px;
+}
 @media (min-width: 430px){
     header section{
         text-align: left;

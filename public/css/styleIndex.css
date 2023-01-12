@@ -5,62 +5,54 @@
     font-family: 'Roboto', 'Segoe UI';
 }
 
-header {
+header{
+    text-align: center;
+}
+
+header .top-header{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
     justify-content: space-around;
-    align-items: center;
-    background-color: #ebebeb;
-    border: 0.5px solid black;
+    width: 100%;
+    
 }
-
-.header-logo {
-    width: 10%;
-}
-
-.header-searchbar {
-    border: 1px solid #ebebeb;
-    width: 70%;
-}
-
-header section i {
-    width: 20%;
-    text-align: center;
-    margin-right: 10%;
-}
-
-header section {
-    text-align: center;
-    font-size: 12px;
-    margin: 3%;
-}
-
-header section p {
-    text-align: center;
-    font-size: 12px;
+header div p{
     display: none;
 }
-
-header section nav div {
-    margin: auto;
-}
-
-header section button i {
-    position: relative;
-    right: 7px;
-}
-
-.icon button {
+.icon button{
+    /* Arriba | Derecha | Abajo | Izquierda */
     margin: 10px 0px 5px;
     padding: 3px;
     font-size: 20px;
-    position: relative;
+}
+header div.barra{
+    margin: 5px;
+    display: flex;
+   
+}
+header .form{
+    margin: 10px;
+    display:flex;
+    align-items: center;
 }
 
-input#searchbar {
-    border: 0.5px solid black;
-    background-color: white;
+
+header .form .input{
+    background-color: #FFF;
+    border: 1px solid #000;
+    outline: none;
+    color: #666;
+    padding: 2px;
+
+}
+header .form .submit{
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #666;
+    margin-left: 10px;
+    
 }
 
 main {
@@ -98,11 +90,23 @@ select#filter {
     width: 80%;
     text-align: center;
 }
-
-@media (min-width: 361px) {
-    header section p {
-        text-align: center;
-        font-size: 15px;
-        display: block;
+.copyright p{
+    text-align: center;
+    font-size: 12px;
+}
+    @media (min-width: 430px) {
+        .icon button{
+            padding: 6px;
+            font-size: 25px;
+            
+        }
+        header div p{
+            display: block;
+            font-size: 15px;
+        }
+        header .input{
+            width: 12em;
+           
     }
 }
+    
