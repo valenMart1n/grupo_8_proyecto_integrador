@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.filter-box {
+   
+    border: 0.5px solid black;
+    background-color: #ebebeb;
+}
+
+select#filter {
+    width: 100%;
+    text-align: center;
+}
+main section {
+    margin-bottom: 20px;
+}
+
+main div.filters {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 3%;
+}
+
+main section article {
+    width: 30%;
+}
+
+main section h3 {
+    margin-bottom: 5px;
+    padding: 3%;
+}
+.producto p{
+    margin-bottom: 5px;
+}
+.nombre{
+    font-weight: 400;
+    
+    text-align: center;
+}
+.precio{
+    text-align: center;
+    font-weight: 900;
+}
+.producto img{
+    width: 100%;
+    max-width: 293px;
+    max-height: 293px;
+    
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    
+}
+.producto{
+    background-color: #fff;
+    margin: 10px 0px;
+    border-bottom-style: solid;
+   
+}
+.productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media(min-width: 430px){
+    main section article{
+        width: 45%;
+    }
+}
+@media(min-width: 769px){
+    .productos{
+        justify-content: flex-start;
+    }
+    .productos div{
+        margin-left: 15px;
+        width: 23%;
+        transition: all 450ms;
+    }
+    .productos div:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
+    }
+   
+
+    
+ 
+}

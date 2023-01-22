@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleList.css">
+    <%- include("partials/head.ejs") %>
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <main>
+    <section class="filter-box">
+        <h3>Filtrar productos</h3>
+        <div class="filters">
+            <article>
+                <select name="filter-type" id="filter">
+                <option value="" selected>Tipo</option>
+                <option value="r">Remera</option>
+                <option value="p">Pantalón</option>
+                <option value="c">Calzado</option>
+                <option value="a">Accesorios</option>
+          </select>
+            </article>
+            <article>
+                <select name="filter-size" id="filter">
+                <option value="" selected>Talle</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+         </select>
+            </article>
+            <article>
+                <select name="filter-color" id="filter">
+                <option value="" selected>Color</option>
+                <option value="b">Blanco</option>
+                <option value="n">Negro</option>
+                <option value="g">Gris</option>
+                <option value="a">Azul</option>
+         </select>
+            </article>
+        </div>
+    </section>
+    <br>
+    <div class="productos">
+    <% for (let i = 0; i < listaProductos.length; i++) { %>
+    <div class="producto">
+        <img class="img1"src= <%=(listaProductos[i].imagen)%>
+        <img class="img2" src=<%=(listaProductos[i].imagen2)%>
+        
+        <br>
+        <p class="nombre"> <%= (listaProductos[i].nombre) %></p> 
+        <p class="precio"> <%= (listaProductos[i].precio) %> </p>
+    </div>
+    
+    <% } %>
+    </div>
+</main>
+</body>
+</html>
