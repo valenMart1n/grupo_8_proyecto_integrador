@@ -1,76 +1,85 @@
 /**/
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', 'Segoe UI';
 }
-.logo img{
-    width: 200px;
-    margin: 10px 0px 5px;
- 
+
+footer {
+    font-size: 12px;
+    text-align: center;
+    background-color: #ebebeb;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5%;
 }
 
-header{
+.logo img {
+    width: 90%;
+    margin: 10px 0px 5px;
+    padding: 5%;
+}
+
+header {
     text-align: center;
 }
 
-header .top-header{
+header .top-header {
     display: flex;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
     width: 100%;
-    background-color: rgb(7, 101, 161) ;
-    
-}
-header div p{
-    display: none;
-}
-header div a i{
-    /* Arriba | Derecha | Abajo | Izquierda */
-    margin: 40px 0px 5px;
-   
-
-}
-header div.barra{
-    margin: 5px;
-    display: flex;
-   
-}
-header .form{
-    margin: 10px;
-    display:flex;
+    background-color: rgb(7, 101, 161);
     align-items: center;
 }
 
+header div p {
+    display: none;
+}
 
-header .form .input{
+header div a i {
+    /* Arriba | Derecha | Abajo | Izquierda */
+    color: #FFF;
+    width: 60%;
+    margin-right: 20px;
+}
+
+header div.barra {
+    margin: 5px;
+    display: flex;
+}
+
+header .form {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+header .form .input {
     background-color: #FFF;
     border: 1px solid #000;
     outline: none;
     color: #666;
     padding: 2px;
-
 }
-header .form .submit{
+
+header .form .submit {
     background-color: #FFF;
     border: 1px solid #000;
     color: #666;
     margin-left: 10px;
-    
 }
 
 main {
     text-align: center;
     font-size: 12px;
     margin: 5%;
-}
-
-main section {
-    margin-bottom: 20px;
+    background-color: #ebebeb;
+    margin: 0;
 }
 
 main div.filters {
@@ -81,12 +90,25 @@ main div.filters {
 }
 
 main section article {
-    width: 30%;
+    display: flex;
+    width: 100%;
+    margin: 5%;
+    padding: 5%;
 }
 
-main section h3 {
-    margin-bottom: 5px;
+main section h1 {
     padding: 3%;
+}
+
+main section img {
+    width: 100%;
+    margin: 0;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .filter-box {
@@ -98,23 +120,48 @@ select#filter {
     width: 80%;
     text-align: center;
 }
-.copyright p{
+
+.copyright p {
     text-align: center;
     font-size: 12px;
 }
-    @media (min-width: 430px) {
-        .icon button{
-            padding: 6px;
-            font-size: 25px;
-            
-        }
-        header div p{
-            display: block;
-            font-size: 15px;
-        }
-        header .input{
-            width: 12em;
-           
+
+.icon button {
+    padding: 6px;
+    font-size: 25px;
+}
+
+header div p {
+    display: block;
+    font-size: 15px;
+}
+
+header .input {
+    width: 12em;
+}
+
+@media (min-width: 361px) {
+    main section.products {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    main section article img {
+        width: 185%;
+        margin: -25px;
+        text-align: center;
+        position: relative;
+        right: 25%;
+        bottom: 20%;
     }
 }
-    
+
+@media (min-width: 780px) {
+    main section article img:hover {
+        box-shadow: 0px 0px 10px rgb(100 100 100);
+        width: 200%;
+        transition: all 0.2s;
+    }
+}
