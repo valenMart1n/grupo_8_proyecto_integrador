@@ -1,34 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-.contenedor{
-    margin: 0 15px;
-    display: flex;
-    flex-direction: column;
-}
-.imagen{
-        height: 70%;
-        width: 70%;
-        display: block;
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
+body {
+    background-color: #ebebeb;
 }
 
-h1{
+h3 {
+    font-size: 16px;
+    padding: 3%;
     text-align: center;
 }
 
-.nombre-producto{
-    display: flex;
-    justify-content: center;
+body main section div {
+    font-size: 14px;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
 }
 
-.descripcion-producto{
-    display: flex;
-    justify-content: center;
+@media (min-width: 768px) {
+    body main section div {
+        text-align: left;
+    }
 }

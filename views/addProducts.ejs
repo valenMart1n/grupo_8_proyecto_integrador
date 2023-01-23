@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styleList.css">
     <link rel="stylesheet" href="/css/addProducts.css">
     <%- include("partials/head.ejs") %>
-    <title>Lista de Productos</title>
+        <title>Lista de Productos</title>
 </head>
-<body>
+
+<header>
     <%- include("partials/header.ejs") %>
+</header>
 
-    <div class="contenedor">
-        <img src="/images/Camiseta1.png" alt="" class="imagen">
-        <h1>Creacion y edicion de productos</h1>
-        <div class="nombre-producto">
-            <label for="">Nombre del producto</label>
-            <input type="text" name="" id="">
-        </div>
+<body>
+    <h3>Creacion y edicion de productos</h3>
+    <main>
+        <section>
+            <div>
+                <label for="">Nombre del producto</label><br>
+                <input type="text" name="" id="">
+            </div>
 
-        <div class="descripcion-producto">
-            <label for="">Descripcion:</label>
-            <input type="text" name="" id="">
-        </div>
+            <div>
+                <label for="">Descripción</label><br>
+                <input type="text" name="" id="">
+            </div>
 
-        <div class="archivos">
-            <input type="file" accept= "image/*">
-        </div>
-
-        <div class="colores">
-            <label for="">Selecciona un color: </label>
-            <select name="" id="">
+            <div>
+                <label for="">Selecciona un color: </label><br>
+                <select name="" id="">
                 <option value="">--Por favor indica el color principal del articulo--</option>
                 <option value="">Rojo</option>
                 <option value="">Verde</option>
                 <option value="">Azul</option>
             </select>
-        </div>
+            </div>
 
-        <div class="prenda">
-            <label for="">Categoría: </label>
-            <select name="" id="">
+            <div>
+                <label for="">Categoría: </label><br>
+                <select name="" id="">
                 <option value="">--Por favor indica el tipo de prenda--</option>
                 <option value="">Remeras</option>
                 <option value="">Buzos</option>
                 <option value="">Pantalones</option>
             </select>
-        </div>
+            </div>
 
-        <div class="precio">
-            <label for="">Precio del articulo</label>
-            <input type="number">
-        </div>
+            <div>
+                <label for="">Precio del articulo</label><br>
+                <input type="number">
+            </div>
+            <div>
+                <label for="">Adjuntar imagen:</label><br>
+                <input type="file" accept="image/*">
+            </div>
 
-        <div class="botones">
-            <button>Editar</button>
-            <button>Agregar</button>
-        </div>
-    </div>
+            <div>
+                <button>Editar</button>
+                <button>Agregar</button>
+            </div>
+        </section>
+    </main>
 </body>

@@ -1,49 +1,41 @@
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:  'Roboto', 'Segoe UI';
+    font-family: 'Roboto', 'Segoe UI';
 }
 
-header section{
-    text-align: center;
-      
-    margin-top: 40px;  
+body {
+    background-color: #ebebeb;
 }
-header section p{
-    display: none;
 
+main {
+    margin-left: 2em;
+    margin-top: 2em;
 }
-.icon i{
-    font-size: 35px;
-    padding: 5px;
-}
-main{
-   margin-left: 2em;
-   margin-top: 2em;
-}
-.menu{
+
+.menu {
     width: 80vw;
     height: 70vh;
     border-style: solid;
     border-color: rgb(58, 56, 56);
     border-width: 1px;
 }
-.titulo{
+
+.titulo {
     display: flex;
     justify-content: space-between;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-color: rgb(58, 56, 56);
-    
-    
 }
-.titulo p{
+
+.titulo p {
     margin: 18px;
     display: none;
 }
-.menu div h1{
+
+.menu div h1 {
     padding-top: 5px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -52,91 +44,63 @@ main{
     font-weight: 10;
     color: rgb(58, 56, 56);
 }
-.datos{
+
+.datos {
     margin: 10px;
-    
 }
-.datos2{
-   
+
+.datos2 {
     display: flex;
     justify-content: space-between;
 }
 
-.datos2 label, input{
-    margin-bottom: 15px;
-    font-size: 12px;
+.datos2 section {
     width: 50%;
-}
-.datos2 section{
-    width: 50%; 
     height: 20px;
 }
 
-.datos2-button button{
+.datos2-button button {
     padding: 5px;
     margin-top: 15px;
-    background-color: white; 
+    background-color: white;
     width: 100%;
     font-weight: bold;
 }
-.datos2-button, .datos2-p{
+
+.datos2-button,
+.datos2-p {
     text-align: center;
     font-size: 12px;
 }
-.datos2-p p{
+
+.datos2-p p {
     margin-bottom: 5px;
 }
-.copyright p{
+
+.copyright p {
     text-align: center;
     font-size: 12px;
 }
-@media (min-width: 430px){
-    header section{
-        text-align: left;
-        margin-left: 3em;
 
-    }
-    header section p{
-        display: block;
-        
-    }
-    .datos2 label, input{
+@media (min-width: 430px) {
+    .datos2-button,
+    .datos2-p {
         font-size: 15px;
     }
-    .datos2-button, .datos2-p{
-        font-size: 15px;
-    }
-    .menu{
+    .menu {
         max-width: 35em;
     }
-    main{
+    main {
         display: flex;
-       justify-content: center;
+        justify-content: center;
     }
-
- 
 }
-@media (min-width: 769px){
-    .datos2 label, input{
-        font-size: 18px;
-    }
-    .icon i{
-        font-size: 40px;
-        padding: 8px;
-    }
 
-    header section{
-        border-bottom-style: solid;
-        border-bottom-color: rgb(58, 56, 56);
-        border-bottom-width: 1px;
-        margin-right: 3em;
-    }
-    .datos2-p p{
+@media (min-width: 769px) {
+    .datos2-p p {
         display: none;
     }
-    
-    .titulo p{
+    .titulo p {
         display: block;
     }
-    
 }
