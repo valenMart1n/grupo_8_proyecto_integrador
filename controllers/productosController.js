@@ -7,6 +7,9 @@ productosController = {
     },
     lista: (req, res) =>{
         return res.render("list",  { listaProductos: listaProductos });
+    },
+    addProducts: (req, res) =>{
+        return res.render("addProducts")
     }
 }
 listaProductos = [{

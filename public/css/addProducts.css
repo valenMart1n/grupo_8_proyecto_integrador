@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+.imagen{
+        height: 70%;
+        width: 70%;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+.nombre-producto{
+    display: flex;
+    justify-content: center;
+}
+
+.descripcion-producto{
+    display: flex;
+    justify-content: center;
+}

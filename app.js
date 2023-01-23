@@ -13,8 +13,6 @@ app.use("/", mainRoutes);
 
 app.use("/productos", productosRoutes);
 
-
-
 app.use("/login", mainRoutes);
 
 app.use("/register", mainRoutes);
