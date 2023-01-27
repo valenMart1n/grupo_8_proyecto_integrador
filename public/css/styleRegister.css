@@ -6,19 +6,6 @@
     font-family:  'Roboto', 'Segoe UI';
 }
 
-header section{
-    text-align: center;
-      
-    margin-top: 40px;  
-}
-header section p{
-    display: none;
-
-}
-.icon i{
-    font-size: 35px;
-    padding: 5px;
-}
 main{
    margin-left: 2em;
    margin-top: 2em;
@@ -92,15 +79,6 @@ main{
 }
 
 @media (min-width: 430px){
-    header section{
-        text-align: left;
-        margin-left: 3em;
-
-    }
-    header section p{
-        display: block;
-        
-    }
     .datos2 label, input{
         font-size: 15px;
     }
@@ -121,18 +99,8 @@ main{
     .datos2 label, input{
         font-size: 18px;
     }
-    .icon i{
-        font-size: 40px;
-        padding: 8px;
-    }
     .menu{
         width: 35em;
-    }
-    header section{
-        border-bottom-style: solid;
-        border-bottom-color: rgb(58, 56, 56);
-        border-bottom-width: 1px;
-        margin-right: 3em;
     }
     .datos2-p p{
         display: none;

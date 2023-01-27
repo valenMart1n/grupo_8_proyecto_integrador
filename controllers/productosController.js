@@ -1,3 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const listaProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 productosController = {
     detalle: (req, res) =>{
         return res.render("productDetail");
@@ -12,15 +18,6 @@ productosController = {
         return res.render("addProducts")
     }
 }
-listaProductos = [{
-    nombre: "CAMISETA ARGENTINA 2023",
-    descripcion: "La nueva camiseta de la selección argentina con tres estrellas",
-    imagen: "/images/Camiseta1.png",
-    imagen2: "/images/Camiseta2.png",
-    colores: "Celeste y Blanca",
-    categoria: "Remera",
-    precio: "$23.000",
-    id: 1
-}];
+
 
 module.exports = productosController, listaProductos;

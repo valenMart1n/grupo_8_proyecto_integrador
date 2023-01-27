@@ -171,23 +171,19 @@ body div.imagen{
     }
     
     .remeras{
-       
-        width: 511px;
-        height: 509px;
-        margin-left: 3em;
+        width: 108em;
+        margin-left: 2em;
+    }
+    .remera1, .remera2{
+        width: 41%;
     }
    
-    .remera1, .remera2{
-        width: 508px;
-        height: 507px;
-        
-    }
+   
     .remera3, .remera4{
         display: block;
     }
     .imagenes div{
-        width: 250px;
-        height: 250px;
+        
         border-style: solid;
         margin-left: 20px;
         margin-bottom: 10px;
@@ -204,9 +200,7 @@ body div.imagen{
         display: none;
     }
     
-    .parrafo2{
-        width: 500px;
-    }
+    
 
     .descripcion2 h2{
         font-size: 20px;
