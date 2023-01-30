@@ -171,11 +171,11 @@ body div.imagen{
     }
     
     .remeras{
-        width: 108em;
+        width: 50em;
         margin-left: 2em;
     }
     .remera1, .remera2{
-        width: 41%;
+        width: 47%;
     }
    
    
@@ -183,7 +183,8 @@ body div.imagen{
         display: block;
     }
     .imagenes div{
-        
+        width: 10em;
+        height: 10em;
         border-style: solid;
         margin-left: 20px;
         margin-bottom: 10px;

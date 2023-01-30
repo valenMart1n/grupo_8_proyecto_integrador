@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="/css/styleDetalle.css">
     <link rel="stylesheet" href="/css/header.css">
     <%- include("partials/head.ejs") %>
-    <title>Nombre de Producto</title>
+    <title></title>
 </head>
 <body>
     <%- include("partials/header.ejs") %>
+    <%if(product != undefined){%>
         <div class="datos">
-        <h1>Nombre del Producto</h1>
+        <h1><%= product.nombre %></h1>
     </div>
     <div class="datos">
-        <p>Precio: 000,00</p>
+        <p>Precio: $<%= product.precio %></p>
         <p>Talle</p>
         <select>
             <option>S</option>
@@ -30,24 +31,24 @@
     <div class="imagen">
         <div class="imagenes">
             <div class="remeras2">
-                <img class="remera3" src="/images/Camiseta1.png">
+                <img class="remera3" src="/images/<%= product.imagen %>">
             </div>
             <div>
-                <img class="remera3" src="/images/Camiseta2.png">
+                <img class="remera3" src="/images/default-image.png">
             </div>
         </div>
         <div class="remeras">
-            <img class="remera1" src="/images/Camiseta1.png">
-            <img class="remera2" src="/images/Camiseta2.png">
+            <img class="remera1" src="/images/<%= product.imagen %>">
+            <img class="remera2" src="/images/default-image.png">
           
         </div>
         <div>
             <div class="datos2">
-                <h1>Nombre del Producto</h1>
+                <h1><%= product.nombre %></h1>
             </div>
             <div class="datos2">
                 <div class="precio">
-                <p>Precio: 000,00</p>
+                <p>Precio: $<%= product.precio %></p>
             </div>
                 <div class="opciones">
                 <p>Talle</p>
@@ -66,32 +67,42 @@
             <div class="carrito2">
                 <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
             </div>
+            <button><a href="/productos/edit/<%= product.id %>" class="editar">Editar Producto</a></button>
+            <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
+                <button type="submit" class="delete">Eliminar</button>
+            </form>
                 <div class="descripcion2">
                     <div>
                         <h2>Descripción</h2>
                     </div>
                     <div class="parrafo2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, aspernatur facere sapiente nisi, aliquam, placeat quidem ipsa in est ipsam vel temporibus blanditiis corrupti hic non optio mollitia atque sed?</p>
+                        <p><%= product.descripcion %></p>
                 </div>
               
                 </div>
             </div>
         </div>
+      
     </div>
     <br>
     <div class="carrito">
         <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
     </div>
+    <button><a href="/productos/edit/<%= product.id %>" class="editar2">Editar Producto</a></button>
+    <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
+        <button type="submit" class="delete2">Eliminar</button>
+    </form>
     <br>
+    
     <div class="descripcion">
         <div>
             <h2>Descripción</h2>
         </div>
         <div class="parrafo">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, aspernatur facere sapiente nisi, aliquam, placeat quidem ipsa in est ipsam vel temporibus blanditiis corrupti hic non optio mollitia atque sed?</p>
+            <p><%= product.descripcion %></p>
         </div>
     </div>
-
+    <%}%>
 </body>
     <%- include("partials/footer.ejs") %>
 </html>

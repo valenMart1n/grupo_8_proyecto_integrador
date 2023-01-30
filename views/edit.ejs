@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/addProducts.css">
+    <%- include("partials/head.ejs") %>
+        <title>Lista de Productos</title>
+</head>
+    <header>
+        <%- include("partials/header.ejs") %>
+    </header>
+    
+    <body>
+        <h3>Creacion y edicion de productos</h3>
+        <main>
+            <section>
+                <form action="/productos/edit/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div>
+                    <%if (productToEdit != undefined){%>
+                    <label for="">Nombre del producto</label><br>
+                    <input type="text" name="nombre" id="" value="<%= productToEdit.nombre %>">
+                </div>
+    
+                <div>
+                    <label for="">Descripción</label><br>
+                    <input type="text" name="descripcion" id="" value="<%= productToEdit.descripcion %>">
+                </div>
+    
+                <div>
+                    <label for="">Selecciona un color: </label><br>
+                    <select name="color" id="">
+                    <option value="">--Por favor indica el color principal del articulo--</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="verde">Verde</option>
+                    <option value="azul">Azul</option>
+                </select>
+                </div>
+    
+                <div>
+                    <label for="">Categoría: </label><br>
+                    <select name="category" id="">
+                    <option value="">--Por favor indica el tipo de prenda--</option>
+                    <option value="remera">Remeras</option>
+                    <option value="buzo">Buzos</option>
+                    <option value="pantalon">Pantalones</option>
+                </select>
+                </div>
+    
+                <div>
+                    <label for="">Precio del articulo</label><br>
+                    <input type="number" name="precio" value="<%= productToEdit.precio %>">
+                </div>
+                <div>
+                    <label for="">Adjuntar imagen:</label><br>
+                    <input type="file" accept="image/*" name="imagen">
+                </div>
+    
+                <div>
+                    <button type="submit">Editar</button>
+                    
+                </div>
+            </section>
+            <%}%>
+        </main>
+    </body>    
+
+</html>

@@ -24,6 +24,10 @@ main div.filters {
     text-align: center;
     padding: 3%;
 }
+.producto a{
+    text-decoration: none;
+    color: black;
+}
 
 main section article {
     width: 30%;
