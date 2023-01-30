@@ -27,9 +27,10 @@ productosController = {
 		
 		listaProductos.push(productos);
 		fs.writeFileSync(productsFilePath, JSON.stringify(listaProductos, null, 2));
-		res.render("list", {listaProductos});
+		res.redirect("/productos/productList");
     },
     listaUser: (req, res) => {
+		let listaProductos = getProductList(productsFilePath);
         res.render("list", {listaProductos});
     },
     addProducts: (req, res) =>{
@@ -46,15 +47,15 @@ productosController = {
 		const productToEdit = {
 			id,
 			...req.body,
-			image: req.file?.filename ? req.file.filename:"default-image.png"
+			imagen: req.file?.filename ? req.file.filename:"default-image.png"
 		}
 		guardarProducto(productToEdit);
-		return res.redirect("/productos");
+		return res.redirect("/productos/productList");
 
 	},
     eliminar : (req, res) => {
         eliminarProducto(req.params.id);
-		return res.redirect("list");
+		res.redirect("/productos/productList");
 	}
 
 }

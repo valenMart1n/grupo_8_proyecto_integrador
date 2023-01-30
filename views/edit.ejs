@@ -19,9 +19,10 @@
         <h3>Creacion y edicion de productos</h3>
         <main>
             <section>
+                <%if (productToEdit != undefined){%>
                 <form action="/productos/edit/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div>
-                    <%if (productToEdit != undefined){%>
+                  
                     <label for="">Nombre del producto</label><br>
                     <input type="text" name="nombre" id="" value="<%= productToEdit.nombre %>">
                 </div>
@@ -64,8 +65,9 @@
                     <button type="submit">Editar</button>
                     
                 </div>
+                <%}%>
             </section>
-            <%}%>
+           
         </main>
     </body>    
 
