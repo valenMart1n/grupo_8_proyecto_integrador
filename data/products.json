@@ -9,39 +9,12 @@
     "id": 1
   },
   {
-    "nombre": "SSSSSSS",
-    "descripcion": "SSSSSSSS",
-    "imagen": "1675106177420.jpg",
-    "colores": "rojo",
-    "precio": "2",
-    "categoria": "pantalon",
+    "nombre": "adsdsa",
+    "descripcion": "asddddasd",
+    "imagen": "1675117803815.jpg",
+    "colores": "azul",
+    "precio": "324324",
+    "categoria": "remera",
     "id": 2
-  },
-  {
-    "nombre": "asdasd",
-    "descripcion": "asdddd",
-    "imagen": "1675113347176.png",
-    "colores": "rojo",
-    "precio": "2323",
-    "categoria": "remera",
-    "id": 3
-  },
-  {
-    "nombre": "asdasd",
-    "descripcion": "asdddd",
-    "imagen": "1675113351371.png",
-    "colores": "rojo",
-    "precio": "2323",
-    "categoria": "remera",
-    "id": 4
-  },
-  {
-    "nombre": "hgghfgh",
-    "descripcion": "dsfgggggggg",
-    "imagen": "1675113464070.jpg",
-    "colores": "rojo",
-    "precio": "33333",
-    "categoria": "remera",
-    "id": 5
   }
 ]

@@ -233,7 +233,12 @@ body div.imagen{
     .remeras:hover .remera2{
         display: block;
      }
-    
+     .delete2{
+        display: none;
+    }
+    .editar2{
+        display: none;
+    }
 
 }
 

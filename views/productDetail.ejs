@@ -88,7 +88,7 @@
     <div class="carrito">
         <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
     </div>
-    <button><a href="/productos/edit/<%= product.id %>" class="editar2">Editar Producto</a></button>
+    <button class="editar2"><a href="/productos/edit/<%= product.id %>" >Editar Producto</a></button>
     <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
         <button type="submit" class="delete2">Eliminar</button>
     </form>

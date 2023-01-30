@@ -23,7 +23,7 @@ router.get("/productCart", productosController.carrito);
 router.get("/productList", productosController.listaUser);
 
 router.get("/create", productosController.addProducts)
-router.post("/productList",fileUpload.single("imagen"),fileUpload.single("imagen2"), productosController.lista)
+router.post("/productList",fileUpload.single("imagen"), productosController.lista)
 
 router.get('/edit/:id', productosController.editar); 
 router.put('/edit/:id', productosController.update); 

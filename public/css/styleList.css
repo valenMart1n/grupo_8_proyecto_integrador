@@ -88,6 +88,9 @@ main section h3 {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
 
     }
+    .editar2 .delete2{
+        display: none;
+    }
    
 
     
