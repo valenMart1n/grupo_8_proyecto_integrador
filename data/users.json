@@ -1,11 +1,11 @@
 [
     {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": "",
-    "categoria": "",
-    "imagen": "",
-    "id": 1
+    "nombre": "pepe",
+    "apellido": "argento",
+    "email": "pepe@gmail.com",
+    "password": "123",
+    "imagen": "default-image.png",
+    "rango": "admin",
+    "id": "1"
 }
 ]

@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
-
-const mainController = require("../controllers/mainController");
-
+const path = require("path");
+const usersController = require("../controllers/usersController");
 const multer = require("multer");
 
 let storage = multer.diskStorage({
     destination: (req, file, callback) => {
-  let folder = path.join(__dirname, "../../public/images/products");
+  let folder = path.join(__dirname, "../public/images");
       callback(null, folder);  
   },
     filename: (req, file, callback) => {
@@ -17,10 +16,8 @@ let storage = multer.diskStorage({
   });
   const fileUpload = multer({ storage});
 
+  router.get("/register", usersController.register);
 
-router.get("/", mainController.index);
-//router.post("/",fileUpload.single("datos"),mainController.index);
+  router.get("/login", usersController.login);
 
-
-
-module.exports = router;
+  module.exports = router;
