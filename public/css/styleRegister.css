@@ -5,14 +5,44 @@
     box-sizing: border-box;
     font-family:  'Roboto', 'Segoe UI';
 }
+.title{
+    display: none;
+}
+.error{
+    padding: 3px;
+    margin-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(155, 4, 4);
+    background-color: #ffbebe;
+    color:#d53f25;
+    margin-top: 10px;
+    width: 75%;
+
+}
+.error p {
+    font-size: 12px;
+}
+.errors{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.archivo{
+    margin-top:5px; 
+    font-size:12px;
+}
 
 main{
    margin-left: 2em;
    margin-top: 2em;
+   
 }
 .menu{
     width: 80vw;
-    height: 70vh;
+    height: 75vh;
     border-style: solid;
     border-color: rgb(58, 56, 56);
     border-width: 1px;
@@ -40,6 +70,7 @@ main{
     color: rgb(58, 56, 56);
 }
 .datos{
+
     margin: 10px;
     
 }
@@ -62,9 +93,12 @@ main{
 .datos2-button button{
     padding: 5px;
     margin-top: 15px;
-    background-color: white; 
+    background-color: rgb(52, 174, 250); 
     width: 100%;
-    font-weight: bold;
+   
+    color: white;
+    border-color: rgb(52, 174, 250);
+    transition: all 340ms;
 }
 .datos2-button, .datos2-p{
     text-align: center;
@@ -85,14 +119,26 @@ main{
     .datos2-button, .datos2-p{
         font-size: 15px;
     }
+    
+    .main{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
     .menu{
         max-width: 35em;
     }
-    main{
-        display: flex;
-       justify-content: center;
-    }
 
+    .error p{
+        font-size: 16px;
+    }    
+
+    .errors{ 
+        margin-top:35px;
+    }
+    .archivo{
+        font-size:15px;
+    }
  
 }
 @media (min-width: 769px){
@@ -105,9 +151,51 @@ main{
     .datos2-p p{
         display: none;
     }
+    .datos button{
+        font-size: 20px;
+    }
     
     .titulo p{
         display: block;
+    }
+    .errors{
+       
+    }
+    main{
+        display: flex;
+    
+       flex-wrap: nowrap;
+       
+    }
+    .ventana{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .error{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2em;
+        padding: 5px;
+        
+    }
+    .title{
+        display: block;
+        margin-top: 10px;
+    }
+    .title-errors{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .archivo{
+        font-size:20px;
+    }
+    .datos2-button button:hover{
+        background-color:  rgb(7, 101, 161);
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
     
 }

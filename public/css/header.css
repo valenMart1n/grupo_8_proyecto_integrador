@@ -7,13 +7,14 @@
 
 .logo img {
     width: 90%;
-    margin: 5%;
+    margin: 2%;
     padding: 5%;
     font-size: 30px;
 }
 
 header {
     text-align: center;
+    color: white
 }
 
 header div.top-header {
@@ -35,7 +36,7 @@ header div a i {
 }
 
 header div.barra {
-    margin: 5px;
+    
     display: flex;
 }
 
@@ -70,6 +71,11 @@ header div p {
     font-size: 15px;
 }
 
-header .input {
-    width: 12em;
+header div input {
+    width: 7em;
+}
+.header-title{
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
 }

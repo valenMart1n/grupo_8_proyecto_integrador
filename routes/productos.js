@@ -20,7 +20,7 @@ router.get("/productDetail/:id", productosController.detalle);
 
 router.get("/productCart", productosController.carrito);
 
-router.get("/productList", productosController.listaUser);
+router.get("/productList", productosController.listaProductos);
 
 router.get("/create", productosController.addProducts)
 router.post("/productList",fileUpload.single("imagen"), productosController.lista)

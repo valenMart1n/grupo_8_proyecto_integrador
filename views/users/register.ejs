@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2c91db2581.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styleRegister.css">
+   
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Registro de Clientes</title>
 </head>
@@ -13,7 +14,7 @@
     <header>
         <%- include("../partials/header.ejs") %>
     </header>
-    <section>
+    <section class="ventana">
             <main>
                 <div class="menu">
                     <div class="titulo">
@@ -23,39 +24,41 @@
                             <p>Si ya sos cliente inicia sesión <a href="login">acá</a></p>
                         </div>
                     </div>
-                    <form action="/" method="POST" enctype="multipart/form-data">
+                    <form action="/users" method="POST" enctype="multipart/form-data">
                     <div class="datos">
                         <div class="datos2">
                             <label>Email:</label>
-                            <input type="text" name="email">
+                            <input type="email" name="email" id="email" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>">
+                            
                         </div>
                         <div class="datos2">
                             <label>Contraseña:</label>
-                            <input type="text" name="password">
+                            <input type="password" name="password" id="password" value="<% if(typeof valores != 'undefined') { %><%= valores.password %><%}%>">
                         </div>
                         <div class="datos2">
                             <label>Confirmar contraseña:</label>
-                            <input type="text">
+                            <input type="password" name="password2">
                         </div>
                         <div class="datos2">
                             <label>Nombre</label>
-                            <input type="text" name="nombre">
+                            <input type="text" name="nombre" id="nombre" value="<% if(typeof valores != 'undefined') { %><%= valores.nombre %><%}%>">
                         </div>
                         <div class="datos2">
                             <label>Apellido:</label>
-                            <input type="text" name="apellido">
+                            <input type="text" name="apellido" id="apellido" value="<% if(typeof valores != 'undefined') { %><%= valores.apellido %><%}%>">
+
                         </div>
                         <div class="datos2">
                             <label>Sexo:</label>
-                            <select name="categoria">
+                            <select name="sexo">
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
                             </select>
                         </div>
                         <div>
-                            <p>Seleccionar imagen de perfil (opcional)</p>
+                            <p class="archivo">Seleccionar imagen de perfil (opcional)</p>
                             <br>
-                            <input type="file" id="datos" name="datos">
+                            <input type="file" id="imagen" name="imagen">
                         </div>
                         <div class="datos2-button">
                             <a href="/"><button type="submit">Registrar</button></a>
@@ -67,9 +70,27 @@
                         </div>
                     </div>
                 </form>
-                </div>
+                
             </main>
+            
+            <div class="title-errors">
+            <div class="title">
+                <h1>Bienvenido/a a Básica</h1>
+                <p>Creá tu cuenta para realizar tus compras</p>
+            </div>
+            <div class="errors">
+            <% if(typeof validaciones != 'undefined') { %>
+                <% validaciones.forEach( (validacion)=> { %>                 
+                <div class="error">
+                      <p><%= validacion.msg %></p> 
+                </div>
+                <%})%>
+            <%}%>
+            </div>
+            
+        </div>
     </section>
+
 </body>
 
 </html>

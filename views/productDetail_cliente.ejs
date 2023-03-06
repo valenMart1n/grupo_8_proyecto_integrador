@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleDetalle_cliente.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <%- include("partials/head.ejs") %>
+    <title></title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <%if(product != undefined){%>
+        <div class="datos">
+        <h1><%= product.nombre %></h1>
+    </div>
+    <div class="datos">
+        <p>Precio: $<%= product.precio %></p>
+        <p>Talle</p>
+        <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          
+        </select>
+        <p>Cantidad:</p>
+        <input type="number">
+    </div>
+    <div class="imagen">
+        <div class="imagenes">
+            <div class="remeras2">
+                <img class="remera3" src="/images/<%= product.imagen %>">
+            </div>
+            <div>
+                <img class="remera3" src="/images/default-image.png">
+            </div>
+        </div>
+        <div class="remeras">
+            <img class="remera1" src="/images/<%= product.imagen %>">
+            <img class="remera2" src="/images/default-image.png">
+          
+        </div>
+        <div>
+            <div class="datos2">
+                <h1><%= product.nombre %></h1>
+            </div>
+            <div class="datos2">
+                <div class="precio">
+                <p>Precio: $<%= product.precio %></p>
+            </div>
+                <div class="opciones">
+                <p>Talle</p>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    
+                </select>
+            </div>
+            <div class="cantidad">
+                <p>Cantidad:</p>
+                <input type="number">
+            </div>
+            <div class="carrito2">
+                <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
+            </div>
+           
+                <div class="descripcion2">
+                    <div>
+                        <h2>Descripción</h2>
+                    </div>
+                    <div class="parrafo2">
+                        <p><%= product.descripcion %></p>
+                </div>
+              
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <br>
+    
+    <div class="carrito">
+        
+        <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
+    </div>
+
+    <br>
+    
+    <div class="descripcion">
+        <div>
+            <h2>Descripción</h2>
+        </div>
+        <div class="parrafo">
+            <p><%= product.descripcion %></p>
+        </div>
+    </div>
+    <%}%>
+</body>
+    <%- include("partials/footer.ejs") %>
+</html>

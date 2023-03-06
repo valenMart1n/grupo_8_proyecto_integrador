@@ -2,22 +2,34 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
-const listaProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let listaProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 productosController = {
     detalle: (req, res) =>{
-        const product = listaProductos.find(products => products.id == req.params.id);
-		return res.render("productDetail", {product});
+		if(req.session.rango != "admin"){
+			let list = getProductList()
+			const product = list.find(products => products.id == req.params.id);
+			return res.render("productDetail_admin", {product});
+		}else{
+			const product = listaProductos.find(products => products.id == req.params.id);
+			return res.render("productDetail_cliente", {product});
+		}     
+       
     },
     carrito: (req, res) =>{
-        return res.render("productCart");
+		if(req.session.rango != undefined){
+			res.render("productCart");
+		}else{
+			res.redirect("/users/login");
+		}        
     },
     lista: (req, res) =>{
-        let nro = listaProductos.length + 1;
+        let list = getProductList();
+		let nro = list.length + 1;
 		let productos = {
 			nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: req.file.filename,
+            imagen: req.file?.filename ? req.file.filename:"default-image.png",
             colores: req.body.color,
 			precio: req.body.precio,
 			categoria: req.body.category,
@@ -25,12 +37,12 @@ productosController = {
             
 		}
 		
-		listaProductos.push(productos);
-		fs.writeFileSync(productsFilePath, JSON.stringify(listaProductos, null, 2));
+		list.push(productos);
+		fs.writeFileSync(productsFilePath, JSON.stringify(list, null, 2));
 		res.redirect("/productos/productList");
     },
-    listaUser: (req, res) => {
-		let listaProductos = getProductList(productsFilePath);
+    listaProductos: (req, res) => {
+		let listaProductos = getProductList();
         res.render("list", {listaProductos});
     },
     addProducts: (req, res) =>{
@@ -38,6 +50,7 @@ productosController = {
     },
 
     editar: (req, res) => {
+		
 		const productToEdit = listaProductos.find(prod => prod.id == req.params.id);
 		return res.render("edit", {productToEdit});
 	},
@@ -47,7 +60,7 @@ productosController = {
 		const productToEdit = {
 			id,
 			...req.body,
-			imagen: req.file?.filename ? req.file.filename:"default-image.png"
+			imagen: req.body.imagen
 		}
 		guardarProducto(productToEdit);
 		return res.redirect("/productos/productList");
@@ -59,11 +72,13 @@ productosController = {
 	}
 
 }
-function getProductList(path){
-    return JSON.parse(fs.readFileSync(path, "utf-8"));
+function getProductList(){
+    let listFilePath = path.join(__dirname, '../data/products.json');
+	let list = JSON.parse(fs.readFileSync(listFilePath, 'utf-8'));
+	return list;
 }
 function guardarProducto(productToEdit){
-	const products = getProductList(productsFilePath);
+	const products = getProductList();
 
 	const productList = products.map(prod => {
 		if(prod.id == productToEdit.id){
@@ -76,9 +91,10 @@ function guardarProducto(productToEdit){
 }
 
 function eliminarProducto(id){
-	let products = getProductList(productsFilePath);
-	products = products.filter(product => product.id != id);
-	fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+	let listFilePath = path.join(__dirname, '../data/products.json');
+	let list = JSON.parse(fs.readFileSync(listFilePath, 'utf-8'));
+	list = list.filter(product => product.id != id);
+	fs.writeFileSync(listFilePath, JSON.stringify(list, null, 2));
 
 }
 

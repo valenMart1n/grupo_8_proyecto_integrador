@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styleDetalle.css">
+    <link rel="stylesheet" href="/css/styleDetalle_admin.css">
     <link rel="stylesheet" href="/css/header.css">
     <%- include("partials/head.ejs") %>
-    <title></title>
+    <%if(product != undefined){%>
+    <title><% product.nombre%></title>
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-    <%if(product != undefined){%>
+    
         <div class="datos">
         <h1><%= product.nombre %></h1>
     </div>
@@ -64,10 +65,8 @@
                 <p>Cantidad:</p>
                 <input type="number">
             </div>
-            <div class="carrito2">
-                <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
-            </div>
-            <button><a href="/productos/edit/<%= product.id %>" class="editar">Editar Producto</a></button>
+            
+            <button class="editar"><a href="/productos/edit/<%= product.id %>">Editar Producto</a></button>
             <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
                 <button type="submit" class="delete">Eliminar</button>
             </form>
@@ -90,6 +89,7 @@
         
         <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
     </div>
+
     <button class="editar2"><a href="/productos/edit/<%= product.id %>" >Editar Producto</a></button>
     <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
         <button type="submit" class="delete2">Eliminar</button>
