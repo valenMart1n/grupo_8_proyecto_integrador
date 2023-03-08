@@ -1,12 +1,9 @@
-const fs = require('fs');
-const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let listaProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 productosController = {
     detalle: (req, res) =>{
-		if(req.session.rango != "admin"){
+		if(req.session.rango == "admin"){
 			let list = getProductList()
 			const product = list.find(products => products.id == req.params.id);
 			return res.render("productDetail_admin", {product});
@@ -37,12 +34,10 @@ productosController = {
             
 		}
 		
-		list.push(productos);
-		fs.writeFileSync(productsFilePath, JSON.stringify(list, null, 2));
 		res.redirect("/productos/productList");
     },
     listaProductos: (req, res) => {
-		let listaProductos = getProductList();
+		
         res.render("list", {listaProductos});
     },
     addProducts: (req, res) =>{
@@ -73,9 +68,8 @@ productosController = {
 
 }
 function getProductList(){
-    let listFilePath = path.join(__dirname, '../data/products.json');
-	let list = JSON.parse(fs.readFileSync(listFilePath, 'utf-8'));
-	return list;
+    
+
 }
 function guardarProducto(productToEdit){
 	const products = getProductList();
@@ -86,18 +80,16 @@ function guardarProducto(productToEdit){
 		}
 		return prod;
 	});
-	fs.writeFileSync(productsFilePath, JSON.stringify(productList, null, 2));
+
 
 }
 
 function eliminarProducto(id){
-	let listFilePath = path.join(__dirname, '../data/products.json');
-	let list = JSON.parse(fs.readFileSync(listFilePath, 'utf-8'));
 	list = list.filter(product => product.id != id);
-	fs.writeFileSync(listFilePath, JSON.stringify(list, null, 2));
+
 
 }
 
 
 
-module.exports = productosController, listaProductos;
+module.exports = productosController;

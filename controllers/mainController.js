@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const listaProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let mainController = {
     index: (req, res) =>{
@@ -10,4 +6,4 @@ let mainController = {
     }
    
 }
-module.exports = mainController, listaProductos;
+module.exports = mainController;
