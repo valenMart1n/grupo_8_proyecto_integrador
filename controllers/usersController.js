@@ -15,6 +15,7 @@ let usersController = {
         if(req.session.rango != undefined){
 			res.render("profile");
 		}else{
+
 			res.render("users/login");
 		}     
     },
@@ -40,6 +41,20 @@ let usersController = {
             req.session.rango = "cliente";
             res.redirect("/");
         }
+    },
+    loginUser:(req, res) =>{
+           Users.findAll({
+                where:{
+                    email: req.body.email,
+                    password: req.body.password
+                }
+            }).then(resultados => {
+                if(resultados != [null,null]){
+                    res.render("index");
+                }else{
+                    console.log("Usuario Inválido");
+                }
+            });
     },
      profile:(req, res) =>{
       
