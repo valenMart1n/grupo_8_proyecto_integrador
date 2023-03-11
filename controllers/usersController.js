@@ -43,7 +43,7 @@ let usersController = {
     },
      profile:(req, res) =>{
       
-        return res.render("profile", {profile});
+        return res.render("perfil");
      }   
 };
 

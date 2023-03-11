@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= %></title>
-</head>
-<body>
-    
-</body>
-</html>
+<html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/stylePerfil.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <title>Info de Usuario</title>
+        <%- include("partials/head.ejs") %>
+    </head>
+    <header>
+        <%- include("partials/header.ejs") %>
+    </header>
+    <body>
+        <div class="container">
+            <div class="top-info">
+                <h1>Información de Usuario</h1> <br>
+                <img src="https://via.placeholder.com/200x200" alt="Imagen de perfil">
+            </div>
+            
+            <div class="main-info">
+                <label>Nombre:</label>
+                <input type="text" value="John">
+                <label>Apellido:</label>
+                <input type="text" value="Doe">
+                <label>Correo:</label>
+                <input type="email" value="johndoe@example.com">
+                <label>Contraseña:</label>
+                <input type="password" value="********">
+                <button class="btn">Guardar</button>
+            </div>
+        </div>
+        <%- include("partials/footer.ejs") %>
+    </body>
+     
+    </html>
