@@ -37,7 +37,7 @@ let storage = multer.diskStorage({
 ], usersController.addUser);
 
   router.get("/login", usersController.login);
-
+  router.get("/logged", usersController.loginUser);
   router.get("/profile/:id", usersController.profile);
 
   router.get("/userInfo", usersController.profile);

@@ -25,18 +25,19 @@
                         <p>Si no sos cliente registrate <a href="register">acá</a></p>
                     </div>
                 </div>
+                <form action="/users/logged" method="GET"></form>
                 <div class="datos"> 
                     <div class="datos2">
                         <label>Email:</label>
-                        <input type="text">
+                        <input type="email" name="email" id="email">
                     </div>
                     <div class="datos2">
                         <label>Contraseña:</label>
-                        <input type="text">
+                        <input type="password" name="password" id="password">
                     </div>
                     <br>
                     <div class="datos2-button">
-                        <a href="/"><button type="submit">Ingresar</button></a>
+                        <a href="/users/logged"><button type="submit">Ingresar</button></a>
                     </div>
                     <div class="datos2-p">
                         <br>
@@ -44,6 +45,7 @@
                     </div>
                 </div>
             </div>
+        </form>
         </main>
     </section>
 </body>
