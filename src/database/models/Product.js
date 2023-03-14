@@ -6,14 +6,23 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        nombre: {
+            type: dataTypes.STRING
+        },
+        color: {
+            type: dataTypes.STRING
+        },
+        categoria: {
+            type: dataTypes.STRING
+        },
         precio: {
             type: dataTypes.DECIMAL
         },
-        descriopcion: {
+        descripcion: {
             type: dataTypes.STRING
         },
-        stock: {
-            type: dataTypes.INTEGER
+        imagen: {
+            type: dataTypes.STRING
         }
     };
     let config = {
