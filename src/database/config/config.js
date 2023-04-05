@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
-    "username": "sql10603493",
-    "password": "rdiL4kFx7y",
-    "database": "sql10603493",
+    "username": "sql10611390",
+    "password": "xKQwBJ9eAw",
+    "database": "sql10611390",
     "host": "sql10.freesqldatabase.com",
     "dialect": "mysql"
   },

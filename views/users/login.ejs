@@ -25,7 +25,7 @@
                         <p>Si no sos cliente registrate <a href="register">acá</a></p>
                     </div>
                 </div>
-                <form action="/users/logged" method="GET"></form>
+                <form action="/users/logged" method="POST">
                 <div class="datos"> 
                     <div class="datos2">
                         <label>Email:</label>
@@ -36,15 +36,35 @@
                         <input type="password" name="password" id="password">
                     </div>
                     <br>
+                    <div>
+                        <label for="">Recordame</label>
+                        <input type="checkbox" name="recordame">
+                    </div><br>
                     <div class="datos2-button">
                         <a href="/users/logged"><button type="submit">Ingresar</button></a>
                     </div>
+                   
                     <div class="datos2-p">
                         <br>
                         <p>Si no sos cliente registrate <a href="register">acá</a></p>
                     </div>
                 </div>
+                
             </div>
+            <div class="title-errors">
+                <div class="title">
+                    <h1>Bienvenido/a a Básica</h1>
+                    <p>Creá tu cuenta para realizar tus compras</p>
+                </div>
+            <div class="errors">
+                <% if(typeof validaciones != 'undefined') { %>
+                    <% validaciones.forEach( (validacion)=> { %>                 
+                    <div class="error">
+                          <p><%= validacion.msg %></p> 
+                    </div>
+                    <%})%>
+                <%}%>
+                </div>
         </form>
         </main>
     </section>

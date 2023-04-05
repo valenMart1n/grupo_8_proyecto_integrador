@@ -37,7 +37,14 @@ let storage = multer.diskStorage({
 ], usersController.addUser);
 
   router.get("/login", usersController.login);
-  router.get("/logged", usersController.loginUser);
+  router.post("/logged",[
+    body('email', 'Ingrese un E-mail válido')
+     .exists()
+     .isEmail(),
+ body('password', 'Ingrese una contraseña')        
+     .exists()
+     .isLength({min:1}),
+] ,usersController.loginUser);
   router.get("/profile/:id", usersController.profile);
 
   router.get("/userInfo", usersController.profile);
