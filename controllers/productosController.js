@@ -1,13 +1,12 @@
 const db = require('../src/database/models')
 
 productosController = {
-    detalle: (req, res) => {
+    detalle: async (req, res) => {
         if (req.session.rango == "admin") {
-            let list = getProductList()
-            const product = list.find(products => products.id == req.params.id);
+            const product = await db.Product.findOne({where: {producto_id: req.params.id}})
             return res.render("productDetail_admin", { product });
         } else {
-            const product = listaProductos.find(products => products.id == req.params.id);
+            const product = await db.Product.findOne({where: {producto_id: req.params.id}})
             return res.render("productDetail_cliente", { product });
         }
 
@@ -26,31 +25,40 @@ productosController = {
     addProducts: (req, res) => {
         return res.render("addProducts")
     },
-    storeProducts: (req, res) => {
+    storeProducts: async (req, res) => {
         db.Product.create({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             color: req.body.color,
             precio: req.body.precio,
-            category: req.body.category,
+            categoria: req.body.category,
             imagen: req.file ? req.file.filename : "default-image.png"
         });
-        res.render("/productos/productList");
+        res.render("list", {listaProductos: await db.Product.findAll()});
     },
-    editar: (req, res) => {
-
-        const productToEdit = listaProductos.find(prod => prod.id == req.params.id);
+    editar: async(req, res) => {
+        
+        const productToEdit = await db.Product.findOne({where: {producto_id: req.params.id}})
         return res.render("edit", { productToEdit });
+        
     },
-    update: (req, res) => {
+    update: async(req, res) => {
         const id = req.params.id;
-        const productToEdit = {
-            id,
-            ...req.body,
-            imagen: req.body.imagen
-        }
-        guardarProducto(productToEdit);
-        return res.redirect("/productos/productList");
+        db.Product.update(
+            {
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            color: req.body.color,
+            precio: req.body.precio,
+            categoria: req.body.category,
+            imagen: req.file ? req.file.filename : "default-image.png"
+            },
+            {
+                where: {producto_id : id}
+            }
+
+        )
+        return res.render("list", {listaProductos: await db.Product.findAll()});
 
     },
     eliminar: (req, res) => {

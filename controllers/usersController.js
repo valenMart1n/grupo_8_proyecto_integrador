@@ -83,8 +83,9 @@ let usersController = {
             req.session.rango = resultados.dataValues.rango;
             if(req.body.recordame != undefined){
             res.cookie("recordame", email, {maxAge: 999999999999});
+            res.cookie("rango", resultados.dataValues.rango, {maxAge: 999999999999});
             }
-           
+          
             res.redirect("/");
             }else{
                 res.render("users/login");
@@ -94,8 +95,9 @@ let usersController = {
         
     },
      profile:(req, res) =>{
-      
-        return res.render("profile", {profile});
+        let email = req.cookies.recordame;
+
+        return res.render("perfil", {profile});
      }   
 };
 

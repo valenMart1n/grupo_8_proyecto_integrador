@@ -48,10 +48,10 @@
     <br>
     
     <div class="productos">
-    <% for (let i = 0; i < listaProductos.length; i++) { %>
+         <% for (let i = 0; i < listaProductos.length; i++) { %>
         
     <div class="producto">
-        <a href="/productos/productDetail/<%= listaProductos[i].id %>">
+        <a href="/productos/productDetail/<%= listaProductos[i].producto_id %>">
         <img class="img1"src= "/images/<%=(listaProductos[i].imagen)%>">
        
         
@@ -62,7 +62,7 @@
     </div>
     
 
-    <% } %>
+    <% } %> 
     </div>
 
 </main>
