@@ -2,10 +2,18 @@ const db = require('../src/database/models')
 
 productosController = {
     detalle: async (req, res) => {
-        if (req.session.rango == "admin") {
+        if(req.cookies.rango != undefined){
+            req.session.rango = req.cookies.rango;
+            if (req.session.rango == "admin") {
             const product = await db.Product.findOne({where: {producto_id: req.params.id}})
             return res.render("productDetail_admin", { product });
-        } else {
+            } else {
+            const product = await db.Product.findOne({where: {producto_id: req.params.id}})
+            return res.render("productDetail_cliente", { product });}
+        }else if(req.session.rango == "admin"){
+            const product = await db.Product.findOne({where: {producto_id: req.params.id}})
+            return res.render("productDetail_admin", { product });
+        }else if(req.session.rango != "admin"){
             const product = await db.Product.findOne({where: {producto_id: req.params.id}})
             return res.render("productDetail_cliente", { product });
         }
@@ -19,32 +27,54 @@ productosController = {
         }
     },
     listaProductos: async(req, res) => {
-        let listaProductos = await db.Product.findAll();
+        if(req.cookies.rango != undefined){
+            req.session.rango = req.cookies.rango;
+            let listaProductos = await db.Product.findAll();
         return res.render("list", { listaProductos });
+        }else{
+            let listaProductos = await db.Product.findAll();
+        return res.render("list", { listaProductos });
+        }
     },
     addProducts: (req, res) => {
-        return res.render("addProducts")
+        if(req.cookies.rango != undefined){
+            req.session.rango = req.cookies.rango;
+            if (req.session.rango == "admin") {
+            return res.render("addProducts")
+            }
+        }else if(req.session.rango == "admin"){
+                return res.render("addProducts")
+        
+        }
     },
-    storeProducts: async (req, res) => {
-        db.Product.create({
+    storeProducts:  async(req, res) => {
+        await db.Product.create({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             color: req.body.color,
             precio: req.body.precio,
             categoria: req.body.category,
             imagen: req.file ? req.file.filename : "default-image.png"
-        });
-        res.render("list", {listaProductos: await db.Product.findAll()});
+        })
+        res.redirect("/productos/productList");
+        
     },
     editar: async(req, res) => {
-        
+        if(req.cookies.rango != undefined){
+            req.session.rango = req.cookies.rango;
+            if (req.session.rango == "admin") {
         const productToEdit = await db.Product.findOne({where: {producto_id: req.params.id}})
         return res.render("edit", { productToEdit });
+            }
+        } else if(req.session.rango == "admin"){
+            const productToEdit = await db.Product.findOne({where: {producto_id: req.params.id}})
+            return res.render("edit", { productToEdit });
+        }
         
     },
     update: async(req, res) => {
         const id = req.params.id;
-        db.Product.update(
+        await db.Product.update(
             {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
@@ -58,37 +88,15 @@ productosController = {
             }
 
         )
-        return res.render("list", {listaProductos: await db.Product.findAll()});
+        res.redirect("/productos/productList");
 
     },
-    eliminar: (req, res) => {
-        eliminarProducto(req.params.id);
+    eliminar: async(req, res) => {
+        await db.Product.destroy({
+            where: {producto_id: req.params.id}
+        });
         res.redirect("/productos/productList");
     }
-
-}
-
-function getProductList() {
-
-
-}
-
-function guardarProducto(productToEdit) {
-    const products = getProductList();
-
-    const productList = products.map(prod => {
-        if (prod.id == productToEdit.id) {
-            return productToEdit;
-        }
-        return prod;
-    });
-
-
-}
-
-function eliminarProducto(id) {
-    list = list.filter(product => product.id != id);
-
 
 }
 

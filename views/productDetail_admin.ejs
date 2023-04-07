@@ -66,8 +66,8 @@
                 <input type="number">
             </div>
             
-            <button class="editar"><a href="/productos/edit/<%= product.id %>">Editar Producto</a></button>
-            <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
+            <button class="editar"><a href="/productos/edit/<%= product.producto_id %>">Editar Producto</a></button>
+            <form action="/productos/delete/<%= product.producto_id %>/?_method=DELETE %>" method="POST">
                 <button type="submit" class="delete">Eliminar</button>
             </form>
                 <div class="descripcion2">
@@ -90,8 +90,8 @@
         <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
     </div>
 
-    <button class="editar2"><a href="/productos/edit/<%= product.id %>" >Editar Producto</a></button>
-    <form action="/productos/delete/<%= product.id %>/?_method=DELETE %>" method="POST">
+    <button class="editar2"><a href="/productos/edit/<%= product.producto_id %>" >Editar Producto</a></button>
+    <form action="/productos/delete/<%= product.producto_id %>/?_method=DELETE %>" method="POST">
         <button type="submit" class="delete2">Eliminar</button>
     </form>
     <br>
