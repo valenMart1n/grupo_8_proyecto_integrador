@@ -65,6 +65,11 @@
                 </div>
                 <%})%>
             <%}%>
+            <% if(typeof mensaje != "undefined"){ %>
+                <div class="error">
+                    <p><%= mensaje%></p>
+                </div>
+            <%}%>
             </div>
             
         </div>

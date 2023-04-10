@@ -24,16 +24,16 @@ let storage = multer.diskStorage({
   router.post("/",fileUpload.single("imagen"), [
     body('nombre', 'Ingrese un nombre')
         .exists()
-        .isLength({min:1}),
+        .isLength({min:2}),
     body('apellido', 'Ingrese su apellido')
         .exists()
-        .isLength({min:1}),
+        .isLength({min:2}),
     body('email', 'Ingrese un E-mail válido')
         .exists()
         .isEmail(),
-    body('password', 'Ingrese una contraseña')        
+    body('password', 'Ingrese una contraseña de al menos 8 caracteres')        
         .exists()
-        .isLength({min:1}),
+        .isLength({min:8}),
 ], usersController.addUser);
 
   router.get("/login", usersController.login);
@@ -41,7 +41,7 @@ let storage = multer.diskStorage({
     body('email', 'Ingrese un E-mail válido')
      .exists()
      .isEmail(),
- body('password', 'Ingrese una contraseña')        
+ body('password', 'Ingrese su contraseña')        
      .exists()
      .isLength({min:1}),
 ] ,usersController.loginUser);

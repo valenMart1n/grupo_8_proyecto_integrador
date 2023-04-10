@@ -88,7 +88,7 @@ let usersController = {
           
             res.redirect("/");
             }else{
-                res.render("users/login");
+                res.render("users/login", {mensaje: "Correo o contraseña incorrectos"});
             }
         });
     }

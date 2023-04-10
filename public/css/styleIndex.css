@@ -88,7 +88,7 @@ header .input {
     width: 12em;
 }
 
-@media (min-width: 361px) {
+@media (min-width: 430px) {
     main section.products {
         display: flex;
         flex-wrap: nowrap;
