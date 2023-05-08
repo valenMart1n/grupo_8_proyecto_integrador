@@ -10,16 +10,16 @@ const {validationResult} = require("express-validator");
 let usersController = {
     register: (req, res) =>{
         if(req.session.rango != undefined){
-            res.redirect("/users/profile");
+            res.redirect("/users/profile/" + req.session.id);
         }else{
             return res.render("users/register");
         }
     },
     login: (req, res) =>{
         if(req.session.rango != undefined){
-			res.redirect("/users/profile");
+			res.redirect("/users/profile/" + req.session.id);
 		}else if(req.cookies.recordame != undefined){
-            res.redirect("/users/profile");
+            res.redirect("/users/profile/" + req.session.id);
         }else{
 			res.render("users/login");
      }
@@ -79,14 +79,14 @@ let usersController = {
         }).then(resultados =>{
             if(bcrypt.compareSync(req.body.password, resultados.dataValues.password)){
             console.log(resultados.dataValues);
-            req.session.id = resultados.dataValues.id;
+            let usuarioId= resultados.dataValues.id;
             req.session.rango = resultados.dataValues.rango;
             if(req.body.recordame != undefined){
             res.cookie("recordame", email, {maxAge: 999999999999});
             res.cookie("rango", resultados.dataValues.rango, {maxAge: 999999999999});
             }
           
-            res.redirect("/");
+            res.render("index", {usuarioId});
             }else{
                 res.render("users/login", {mensaje: "Correo o contraseña incorrectos"});
             }
@@ -94,11 +94,27 @@ let usersController = {
     }
         
     },
-     profile:(req, res) =>{
-        let email = req.cookies.recordame;
+    profile:(req, res) =>{
+        const userId = req.params.id;
+        Users.findOne({
+            where: { id: userId }
+          })
+          .then(user => {
+            res.render('perfil', { usuario: user });
+          })
+          .catch(error => {
+            console.log(error);
+          });
+     },
+     logout:(req,res) =>{
+    
+            req.session.rango = undefined;
+            req.session.id = undefined;
+            res.clearCookie ("recordame");
+            res.clearCookie ("rango");
+            res.render("index")
+     }
 
-        return res.render("perfil", {profile});
-     }   
 };
 
 module.exports = usersController;

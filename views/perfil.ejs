@@ -22,14 +22,16 @@
             
             <div class="main-info">
                 <label>Nombre:</label>
-                <input type="text" value="John">
+                <input type="text" value="<%= usuario.nombre %>">
                 <label>Apellido:</label>
-                <input type="text" value="Doe">
+                <input type="text" value="<%= usuario.apellido %>">
                 <label>Correo:</label>
-                <input type="email" value="johndoe@example.com">
-                <label>Contraseña:</label>
-                <input type="password" value="********">
+                <input type="email" value="<%= usuario.email %>">
                 <button class="btn">Guardar</button>
+                <form action="/users/logout" method="POST"> 
+                    <button class="btn-close-session">Cerrar Sesión</button>
+                </form>
+                
             </div>
         </div>
         <%- include("partials/footer.ejs") %>

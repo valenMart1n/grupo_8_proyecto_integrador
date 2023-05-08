@@ -1,11 +1,11 @@
 module.exports = {
   "development": {
-    "username": "sql10611390",
-    "password": "xKQwBJ9eAw",
-    "database": "sql10611390",
-    "host": "sql10.freesqldatabase.com",
+    "username": "basicadb",
+    "password": "pfS?Z@?fHNF3?hh{",
+    "database": "basicadb_db",
+    "host": "mysql-basicadb.alwaysdata.net",
     "dialect": "mysql"
-  },
+},
   "test": {
     "username": "root",
     "password": null,
