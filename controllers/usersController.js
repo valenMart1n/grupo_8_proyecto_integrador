@@ -5,23 +5,24 @@ const Users = db.Usuario;
 
 let bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator");
-
+let secretId;
 
 let usersController = {
     register: (req, res) =>{
         if(req.session.rango != undefined){
-            res.redirect("/users/profile/" + req.session.id);
+            res.redirect("/users/profile/" + secretId);
         }else{
-            return res.render("users/register");
+            return res.render("users/register", { req: req });
         }
     },
     login: (req, res) =>{
         if(req.session.rango != undefined){
-			res.redirect("/users/profile/" + req.session.id);
+			res.redirect("/users/profile/" + secretId)
+            console.log(secretId)
 		}else if(req.cookies.recordame != undefined){
-            res.redirect("/users/profile/" + req.session.id);
+            res.redirect("/users/profile/" + secretId);
         }else{
-			res.render("users/login");
+			res.render("users/login", { req: req });
      }
 		     
     },
@@ -79,14 +80,14 @@ let usersController = {
         }).then(resultados =>{
             if(bcrypt.compareSync(req.body.password, resultados.dataValues.password)){
             console.log(resultados.dataValues);
-            let usuarioId= resultados.dataValues.id;
+            secretId= resultados.dataValues.id;
             req.session.rango = resultados.dataValues.rango;
             if(req.body.recordame != undefined){
             res.cookie("recordame", email, {maxAge: 999999999999});
             res.cookie("rango", resultados.dataValues.rango, {maxAge: 999999999999});
             }
           
-            res.render("index", {usuarioId});
+            res.render('index', { req: req });
             }else{
                 res.render("users/login", {mensaje: "Correo o contraseña incorrectos"});
             }
@@ -96,11 +97,13 @@ let usersController = {
     },
     profile:(req, res) =>{
         const userId = req.params.id;
+        
         Users.findOne({
             where: { id: userId }
           })
           .then(user => {
-            res.render('perfil', { usuario: user });
+            console.log(user.imagen);
+            res.render('perfil', { usuario: user, req: req });
           })
           .catch(error => {
             console.log(error);
@@ -109,11 +112,29 @@ let usersController = {
      logout:(req,res) =>{
     
             req.session.rango = undefined;
-            req.session.id = undefined;
             res.clearCookie ("recordame");
             res.clearCookie ("rango");
             res.render("index")
-     }
+     },
+     updateUser: async(req, res) => {
+
+        const id = req.params.id;
+        const usuario = await db.Usuario.findOne({where: {id: req.params.id}})
+        await db.Usuario.update(
+            {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            imagen: req.file ? req.file.filename : await db.Usuario.findOne({where: {id}}, {attributes: ['imagen']}).imagen
+            },
+            {
+                where: {id}
+            }
+
+        )
+        return  res.redirect("/users/profile/" + id)
+
+    }
 
 };
 

@@ -30,10 +30,10 @@ productosController = {
         if(req.cookies.rango != undefined){
             req.session.rango = req.cookies.rango;
             let listaProductos = await db.Product.findAll();
-        return res.render("list", { listaProductos });
+        return res.render("list", { listaProductos, req: req });
         }else{
             let listaProductos = await db.Product.findAll();
-        return res.render("list", { listaProductos });
+        return res.render("list", { listaProductos, req: req });
         }
     },
     addProducts: (req, res) => {

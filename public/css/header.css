@@ -98,6 +98,8 @@ header div p {
     header div input{
         width: 15em;
         height: 25px;
+        border-radius: 8px;
+        border: none;
     }
     
 }
@@ -110,3 +112,14 @@ header div p {
         height: 30px;
     }
 }
+
+i{
+    font-weight: 900;
+    font-size: medium;
+}
+
+   
+   
+   
+   
+   

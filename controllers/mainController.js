@@ -8,7 +8,7 @@ let mainController = {
             console.log("Lo de las cookies2: " + req.cookies.rango);
         }
         
-        return res.render("index");
+        return res.render('index', { req: req });
     }
    
 }

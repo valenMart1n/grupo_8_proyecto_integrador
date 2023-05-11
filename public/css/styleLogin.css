@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family:  'Roboto', 'Segoe UI';
 }
+input{
+    border-radius: 3%;
+}
 .title{
     display: none;
 }
@@ -42,6 +45,7 @@ main{
     border-style: solid;
     border-color: rgb(58, 56, 56);
     border-width: 1px;
+    border-radius: 3%;
 }
 .titulo{
     display: flex;

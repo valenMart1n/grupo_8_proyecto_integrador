@@ -17,17 +17,19 @@
         <div class="container">
             <div class="top-info">
                 <h1>Información de Usuario</h1> <br>
-                <img src="https://via.placeholder.com/200x200" alt="Imagen de perfil">
+                <img src="/images/<%= usuario.imagen %>" alt="Imagen de perfil">  
             </div>
             
             <div class="main-info">
+                <form action="/users/update/<%=usuario.id%>?_method=PUT" method="POST" class="main-info">
                 <label>Nombre:</label>
-                <input type="text" value="<%= usuario.nombre %>">
+                <input type="text" value="<%= usuario.nombre %>" name="nombre" class="nombre">
                 <label>Apellido:</label>
-                <input type="text" value="<%= usuario.apellido %>">
+                <input type="text" value="<%= usuario.apellido %>" name="apellido" class="apellido">
                 <label>Correo:</label>
-                <input type="email" value="<%= usuario.email %>">
+                <input type="email" value="<%= usuario.email %>" name="email" class="email">
                 <button class="btn">Guardar</button>
+                </form>
                 <form action="/users/logout" method="POST"> 
                     <button class="btn-close-session">Cerrar Sesión</button>
                 </form>
