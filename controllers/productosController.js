@@ -53,7 +53,7 @@ productosController = {
             descripcion: req.body.descripcion,
             color: req.body.color,
             precio: req.body.precio,
-            categoria: req.body.category,
+            categoria: req.body.categoria,
             imagen: req.file ? req.file.filename : "default-image.png"
         })
         res.redirect("/productos/productList");
@@ -80,7 +80,7 @@ productosController = {
             descripcion: req.body.descripcion,
             color: req.body.color,
             precio: req.body.precio,
-            categoria: req.body.category,
+            categoria: req.body.categoria,
             imagen: req.file ? req.file.filename : "default-image.png"
             },
             {

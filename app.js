@@ -8,6 +8,7 @@ const app = express();
 const methodOverride =  require('method-override');
 
 let mainRoutes = require("./routes/main");
+let api = require("./routes/api");
 let productosRoutes = require("./routes/productos");
 let usersRoutes = require("./routes/users");
 
@@ -25,6 +26,8 @@ app.set("view engine", "ejs");
 app.use(session({secret: "session", resave: false, saveUninitialized: false}));
 
 app.use("/", mainRoutes);
+
+app.use("/api", api);
 
 app.use("/productos", productosRoutes);
 
