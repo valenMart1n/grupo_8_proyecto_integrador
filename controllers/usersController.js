@@ -2,13 +2,8 @@ const db = require('../src/database/models');
 const sequelize = db.sequelize;
 
 const Users = db.Usuario;
-let idr;
-let emailr;
-let nombrer;
-let apellidor;
-let passwordr;
-let imagenr;
-let sexor;
+
+let emailr, nombrer, apellidor, passwordr, imagenr, sexor;
 let bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator");
 let secretId;
@@ -52,7 +47,6 @@ let usersController = {
                 email:emailr
             }
         }).then(resultados =>{
-            console.log(resultados);
             if(resultados != undefined){
             res.render("users/register");    
             }else{

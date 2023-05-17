@@ -47,7 +47,7 @@ window.addEventListener('load', function() {
             entrar = true;
              
         }else{
-            email_error.classList.remove("error_style");
+            password_error.classList.remove("error_style");
             password_error.classList.add("invisible"); 
             password.classList.remove("fondo_error");
             password.classList.add("fondo_correcto");
