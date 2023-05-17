@@ -29,4 +29,6 @@ router.get('/edit/:id', productosController.editar);
 router.put('/edit/:id', fileUpload.single("imagen"), productosController.update);
 
 router.delete('/delete/:id', productosController.eliminar);
+
+router.get("/search", productosController.search);
 module.exports = router;

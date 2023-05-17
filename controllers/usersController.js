@@ -2,7 +2,13 @@ const db = require('../src/database/models');
 const sequelize = db.sequelize;
 
 const Users = db.Usuario;
-
+let idr;
+let emailr;
+let nombrer;
+let apellidor;
+let passwordr;
+let imagenr;
+let sexor;
 let bcrypt = require("bcryptjs");
 const {validationResult} = require("express-validator");
 let secretId;
@@ -34,25 +40,38 @@ let usersController = {
             const validaciones = errors.array();
             res.render('users/register', {validaciones:validaciones, valores: valores});
         }else{
-            let email = req.body.email;
+           
+            emailr = req.body.email;
+            nombrer= req.body.nombre;
+            apellidor = req.body.apellido;
+            passwordr = bcrypt.hashSync(req.body.password, 10);
+            imagenr = req.file?.filename ? req.file.filename:"default-image.png";
+            sexor = req.body.sexo;
             await db.Usuario.findOne({
             where: {
-                email
+                email:emailr
             }
         }).then(resultados =>{
+            console.log(resultados);
             if(resultados != undefined){
             res.render("users/register");    
             }else{
+                
                 db.Usuario.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
-                    imagen: req.file?.filename ? req.file.filename:"default-image.png",
+                    nombre: nombrer,
+                    apellido: apellidor,
+                    email: emailr,
+                    password: passwordr,
+                    imagen: imagenr,
                     rango: "cliente",
-                    sexo: req.body.sexo
+                    sexo: sexor
                     
                 });
+                db.Usuario.findAll()
+                .then(resultados =>{
+                   let dato = Array.from(resultados).length - 1;
+                   secretId = Array.from(resultados)[dato].dataValues.id + 1;
+                })
                 req.session.rango = "cliente";
                 res.redirect("/");
             }

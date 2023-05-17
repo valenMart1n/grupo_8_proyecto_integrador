@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2c91db2581.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styleRegister.css">
-   
+    <script src="/js/validaciones_register.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Registro de Clientes</title>
 </head>
@@ -28,26 +28,34 @@
                     <div class="datos">
                         <div class="datos2">
                             <label>Email:</label>
-                            <input type="email" name="email" id="email" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>">
-                            
+                            <input type="email" name="email" id="email" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>">                            
                         </div>
+                            <p class="invisible" class="error_style"  class="error_email" id="error_email" name="error_email">Tenés que ingresar un email válido</p>
+
                         <div class="datos2">
                             <label>Contraseña:</label>
                             <input type="password" name="password" id="password" value="<% if(typeof valores != 'undefined') { %><%= valores.password %><%}%>">
                         </div>
+                        <p class="invisible" class="error_style"  class="error_password" id="error_password" name="error_password">Tenés que ingresar una contraseña de al menos 8 caracteres</p>
+
                         <div class="datos2">
                             <label>Confirmar contraseña:</label>
-                            <input type="password" name="password2">
+                            <input type="password" name="password2" id="password2">
                         </div>
+                        <p  class="invisible" class="error_style" class="error_password2" id="error_password2" name="error_password2">Las contraseñas no coinciden</p>
+
                         <div class="datos2">
                             <label>Nombre</label>
                             <input type="text" name="nombre" id="nombre" value="<% if(typeof valores != 'undefined') { %><%= valores.nombre %><%}%>">
                         </div>
+                        <p class="invisible" class="error_style"  class="error_nombre" id="error_nombre" name="error_nombre">Tenés que ingresar tu nombre</p>
+
                         <div class="datos2">
                             <label>Apellido:</label>
                             <input type="text" name="apellido" id="apellido" value="<% if(typeof valores != 'undefined') { %><%= valores.apellido %><%}%>">
-
                         </div>
+                        <p class="invisible" class="error_style" class="error_apellido" id="error_apellido" name="error_apellido">Tenés que ingresar tu apellido</p>
+
                         <div class="datos2">
                             <label>Sexo:</label>
                             <select name="sexo">
@@ -61,7 +69,7 @@
                             <input type="file" id="imagen" name="imagen">
                         </div>
                         <div class="datos2-button">
-                            <a href="/"><button type="submit">Registrar</button></a>
+                            <a href="/"><button type="submit" >Registrar</button></a>
                         </div>
                      
                         <div class="datos2-p">
@@ -79,7 +87,8 @@
                 <p>Creá tu cuenta para realizar tus compras</p>
             </div>
             <div class="errors">
-            <% if(typeof validaciones != 'undefined') { %>
+            
+             <%if(typeof validaciones != 'undefined') { %>
                 <% validaciones.forEach( (validacion)=> { %>                 
                 <div class="error">
                       <p><%= validacion.msg %></p> 

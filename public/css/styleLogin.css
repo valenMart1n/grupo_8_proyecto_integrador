@@ -11,6 +11,9 @@ input{
 .title{
     display: none;
 }
+.invisible{
+    display: none;
+}
 .error{
     padding: 3px;
     margin-top: 5px;

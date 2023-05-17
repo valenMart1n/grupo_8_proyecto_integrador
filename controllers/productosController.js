@@ -1,5 +1,5 @@
 const db = require('../src/database/models')
-
+const { Sequelize, Op, Model, DataTypes } = require('sequelize');
 productosController = {
     detalle: async (req, res) => {
         if(req.cookies.rango != undefined){
@@ -96,6 +96,14 @@ productosController = {
             where: {producto_id: req.params.id}
         });
         res.redirect("/productos/productList");
+    },
+    search: async(req, res)=>{
+
+        await db.Product.findAll({
+            where: {nombre: {[Sequelize.Op.like]:"%"+ req.body.keyword +"%",}}
+          })
+          return res.render("list", { listaProductos: prod});
+      
     }
 
 }

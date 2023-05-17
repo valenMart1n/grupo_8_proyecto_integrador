@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2c91db2581.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styleLogin.css">
-   
+    <script src="/js/validaciones_login.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Iniciar Sesión</title>
 </head>
@@ -42,7 +42,9 @@
                         </div><br>
                         <div class="datos2-button">
                             <a href="/users/logged"><button type="submit">Ingresar</button></a>
+                            
                         </div>
+                       
                         <div class="datos2-p">
                             <br>
                             <p>Si no sos cliente registrate <a href="register">acá</a></p>
@@ -70,7 +72,11 @@
                     <p><%= mensaje%></p>
                 </div>
             <%}%>
+            <div class="alert" id="alert">
+                <p class="invisible" class="msg" id="msg" name="msg">Correo o contraseña incorrecta</p>
+                </div>
             </div>
+            
             
         </div>
     </section>

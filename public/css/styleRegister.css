@@ -8,6 +8,21 @@
 .title{
     display: none;
 }
+.fondo_error{
+    border-color: #fc2222;
+}
+.fondo_correcto{
+    background-color: #25d583;
+}
+.error_style{
+    color: #fc2222;
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+.invisible{
+    display: none;
+}
 .error{
     padding: 3px;
     margin-top: 5px;
@@ -42,7 +57,7 @@ main{
 }
 .menu{
     width: 80vw;
-    height: 75vh;
+    height: 87vh;
     border-style: solid;
     border-color: rgb(58, 56, 56);
     border-width: 1px;
@@ -78,12 +93,14 @@ main{
    
     display: flex;
     justify-content: space-between;
+    
 }
 
 .datos2 label, input{
     margin-bottom: 15px;
     font-size: 12px;
     width: 50%;
+
 }
 .datos2 section{
     width: 50%; 
@@ -142,6 +159,9 @@ main{
  
 }
 @media (min-width: 769px){
+    .error_style{
+        font-size: 14px;
+    }
     .datos2 label, input{
         font-size: 18px;
     }
