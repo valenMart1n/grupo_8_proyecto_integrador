@@ -24,6 +24,7 @@ router.get("/productList", productosController.listaProductos);
 
 router.get("/create", productosController.addProducts)
 router.post("/productList", fileUpload.single("imagen"), productosController.storeProducts)
+router.get("/productList/:categoria", productosController.filtro);
 
 router.get('/edit/:id', productosController.editar);
 router.put('/edit/:id', fileUpload.single("imagen"), productosController.update);

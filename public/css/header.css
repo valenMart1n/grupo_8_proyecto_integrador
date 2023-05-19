@@ -14,6 +14,51 @@
     padding: 5%;
     font-size: 30px;
 }
+.nav{
+    width: 100%;
+  /*  display: none;*/
+  height: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transition: all .5s ease;
+
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.nav.activo{   
+    height: 82px;
+    pointer-events: auto;
+    /*height: 50;
+    pointer-events: auto;*/
+}
+.header .ul{
+    flex-direction: column;
+   
+}
+.header .li{
+    
+    margin: 1rem 0;
+    
+}
+.ul{
+    list-style: none;
+}
+.li{
+    padding: 3px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 2px 0px;
+    width: 100vw;
+    text-align: center;
+}
+.li a{
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+
+}
 
 header {
     text-align: center;
@@ -84,6 +129,18 @@ header div p {
     font-size: 10px;
 }
 @media (min-width: 430px){
+    .header .ul{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header .li{
+        margin: 0 .5em;
+    }
+    .nav{
+        display: none;
+    }
     .icon{
         display: block;
     }

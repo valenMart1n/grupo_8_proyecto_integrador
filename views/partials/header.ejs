@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/header.css">
-
+<script src="/js/menu.js"></script>
 <header>
     <div class="top-header">
         <div class="logo">
@@ -29,8 +29,15 @@
             <a href="/productos/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="burger">
-            <i class="fa-solid fa-bars"></i>
+            <i id="icon" class="fa-solid fa-bars"></i>
             
         </div>
     </div>
+    <nav class="nav">
+        <ul class="ul">
+            <li class="li"><a href="/productos/productList" class="header-title"><i class="fa-solid fa-box-open" style="color: rgb(7, 101, 161)"></i> Productos</a></li>
+            <li class="li"><a href="/users/login"><i class="fa-regular fa-user" style="color: rgb(7, 101, 161)"></i> Mi cuenta</a></li>
+            <li class="li"> <a href="/productos/productCart"><i class="fa-solid fa-cart-shopping" style="color: rgb(7, 101, 161)"></i> Carrito</a></li>
+        </ul>
+    </nav>
 </header>

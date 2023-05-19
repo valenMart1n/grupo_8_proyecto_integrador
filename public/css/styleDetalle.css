@@ -86,9 +86,6 @@ body div.imagen{
 .remeras{
     width: 50vw;
     height: 55vw;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
 }
 
 .remera1, .remera2{
@@ -110,6 +107,9 @@ body div.imagen{
    
     width: 65vw;
     margin:auto;
+}
+.parrafo p{
+    text-align: center;
 }
 
 .descripcion h2{
@@ -171,7 +171,6 @@ body div.imagen{
     }
     
     .remeras{
-        width: 50em;
         margin-left: 2em;
     }
     .remera1, .remera2{

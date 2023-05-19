@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <%- include("partials/head.ejs") %>
     <%if(product != undefined){%>
-    <title><% product.nombre%></title>
+    <title>Detalle de Producto</title>
 </head>
 <body>
     <%- include("partials/header.ejs") %>
@@ -18,16 +18,7 @@
     </div>
     <div class="datos">
         <p>Precio: $<%= product.precio %></p>
-        <p>Talle</p>
-        <select>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
-          
-        </select>
-        <p>Cantidad:</p>
-        <input type="number">
+   
     </div>
     <div class="imagen">
         <div class="imagenes">
@@ -48,24 +39,11 @@
                 <div class="precio">
                 <p>Precio: $<%= product.precio %></p>
             </div>
-                <div class="opciones">
-                <p>Talle</p>
-                <select>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    
-                </select>
-            </div>
-            <div class="cantidad">
-                <p>Cantidad:</p>
-                <input type="number">
-            </div>
             
-            <button class="editar"><a href="/productos/edit/<%= product.producto_id %>">Editar Producto</a></button>
+            
+            <button class="editar"><a href="/productos/edit/<%= product.producto_id %>">Editar Producto <i class="fa-solid fa-pen-to-square"></i></a></button>
             <form action="/productos/delete/<%= product.producto_id %>/?_method=DELETE %>" method="POST">
-                <button type="submit" class="delete">Eliminar</button>
+                <button type="submit" class="delete">Eliminar Producto <i class="fa-solid fa-trash"></i></i></button>
             </form>
                 <div class="descripcion2">
                     <div>
@@ -81,18 +59,6 @@
       
     </div>
     <br>
-    
-    <div class="carrito">
-        
-        <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
-    </div>
-
-    <button class="editar2"><a href="/productos/edit/<%= product.producto_id %>" >Editar Producto</a></button>
-    <form action="/productos/delete/<%= product.producto_id %>/?_method=DELETE %>" method="POST">
-        <button type="submit" class="delete2">Eliminar</button>
-    </form>
-    <br>
-    
     <div class="descripcion">
         <div>
             <h2>Descripción</h2>
@@ -102,6 +68,15 @@
         </div>
     </div>
     <%}%>
-</body>
 
+    
+ 
+    <div class="botones">
+        <button class="editar2"><a href="/productos/edit/<%= product.producto_id %>"><i class="fa-solid fa-pen-to-square"></i></a></button>
+        <form action="/productos/delete/<%= product.producto_id %>/?_method=DELETE %>" method="POST">
+            <button type="submit" class="delete2"><i class="fa-solid fa-trash"></i></button>
+        </form>
+        </div>
+</body>
+<%- include("partials/footer.ejs") %>
 </html>

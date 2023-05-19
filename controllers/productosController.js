@@ -99,11 +99,14 @@ productosController = {
     },
     search: async(req, res)=>{
 
-        await db.Product.findAll({
-            where: {nombre: {[Sequelize.Op.like]:"%"+ req.body.keyword +"%",}}
-          })
+        let prod = await db.Product.findAll({where: {nombre: {[Sequelize.Op.like]:"%"+ req.query.query +"%"}}})
           return res.render("list", { listaProductos: prod});
       
+    
+    },
+    filtro: async(req, res)=>{
+        let listaProductos = await db.Product.findAll({where: {categoria: req.params.categoria}})
+        return res.render("list", { listaProductos});
     }
 
 }
