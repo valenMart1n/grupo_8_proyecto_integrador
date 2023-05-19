@@ -20,22 +20,16 @@ p{
     margin-top: 10px;
 }
 
-/*p{
-    margin: 10px;
-    font-size: 25px;
-}
-label{
-    font-size: 25px;
-}
-  */
-
 h2{
     border-top: black 3px solid;
     padding: 10px 0;
 }
 
 .titulo{
-    margin: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px
 }
 
 

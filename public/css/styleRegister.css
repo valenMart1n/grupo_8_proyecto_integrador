@@ -58,9 +58,6 @@ main{
 .menu{
     width: 80vw;
     height: 87vh;
-    border-style: solid;
-    border-color: rgb(58, 56, 56);
-    border-width: 1px;
 }
 .titulo{
     display: flex;
@@ -110,11 +107,11 @@ main{
 .datos2-button button{
     padding: 5px;
     margin-top: 15px;
-    background-color: rgb(52, 174, 250); 
+    background-color: rgb(7, 101, 161);; 
     width: 100%;
    
     color: white;
-    border-color: rgb(52, 174, 250);
+    border-color: rgb(7, 101, 161);;
     transition: all 340ms;
 }
 .datos2-button, .datos2-p{

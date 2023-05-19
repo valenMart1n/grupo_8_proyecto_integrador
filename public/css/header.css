@@ -22,7 +22,6 @@ header {
 
 header div.top-header {
     display: flex;
-    border-bottom-style: solid;
     border-bottom-width: 1px;
     justify-content: space-evenly;
     text-align: center;

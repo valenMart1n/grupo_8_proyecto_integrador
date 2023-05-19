@@ -16,36 +16,42 @@
 
 <body>
     <main>
-        <section>
-            <h1>Bienvenido a Básica!</h1>
-            <br>
-            <section>
-                <img src="https://i0.wp.com/sendgift.com.sv/wp-content/uploads/2020/08/11.-banner-ofertas.png?w=1173&ssl=1" alt="-banner-ofertas">
-            </section>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>¡Bienvenidos a Básica!</h1>
+            </div>
+        </div>
+        <section>      
             <br>
             <section class="products">
                 <article>
-                    <a href="/products/productsList/">
+                    <a href="#">
                         <img src="/images/remeras.jpeg" alt="Remeras">
                     </a>
                 </article>
                 <article>
-                    <a href="/productos/productList/buzos">
+                    <a href="#">
                         <img src="/images/buzos.jpeg" alt="Buzos">
                     </a>
                 </article>
                 <article>
-                    <a href="/productos/productList/pantalones">
+                    <a href="#">
                         <img src="/images/pantalones.jpeg" alt="Pantalones">
                     </a>
                 </article>
 
             </section>
         </section>
+        <div class="banner-newsletter">
+            <div class="banner-newsletter-content">
+                <h1>Suscribite a nuestro newsletter y recibi las mejores ofertas</h1>
+            </div>
+            <div class="input-newsletter">
+                <input type="email" placeholder="Ingresa tu correo electrónico">
+                <button>Enviar</button>
+            </div>
+        </div>
     </main>
 </body>
-
-
-
-
+<%- include("partials/footer.ejs") %>
 </html>
