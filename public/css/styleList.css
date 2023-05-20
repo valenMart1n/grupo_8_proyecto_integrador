@@ -53,7 +53,7 @@ main section h3 {
     width: 100%;
     max-width: 293px;
     max-height: 293px;
-    
+    object-fit: contain;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     
