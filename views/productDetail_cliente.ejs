@@ -60,10 +60,10 @@
                 <p>Cantidad:</p>
                 <input type="number">
             </div>
+           
             <div class="carrito2">
                 <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
-            </div>
-           
+            </div> 
                 <div class="descripcion2">
                     <div>
                         <h2>Descripción</h2>
@@ -71,13 +71,18 @@
                     <div class="parrafo2">
                         <p><%= product.descripcion %></p>
                 </div>
-              
+                 
                 </div>
             </div>
         </div>
       
     </div>
     <br>
+
+    <div class="carrito">
+        
+        <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
+    </div>
      
     <div class="descripcion">
         <div>
@@ -87,13 +92,10 @@
             <p><%= product.descripcion %></p>
         </div>
     </div>
-    <br>
+    
    
   
-    <div class="carrito">
-        
-        <a href="/productCart"><button>Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button></a>
-    </div>
+  
     <%}%>
 </body>
 <%- include("partials/footer.ejs") %>

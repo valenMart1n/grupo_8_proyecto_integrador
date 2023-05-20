@@ -90,26 +90,46 @@ body div.imagen{
 
 .remera1, .remera2{
     position: absolute;
-    width: 49vw;
-    height: 54vw;
+    width: 40%;
+    height: 50%;
+    object-fit: contain;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 
 .carrito{
     text-align: center;
+    
 }
-.carrito button{
+
+.carrito button {
     padding: 5px;
     font-size: 12px;
+    background-color: rgb(7, 101, 161);
+    color: white;
+    position: relative;
+    z-index: 2;
+    margin-top: 8%;
+  }
+  
 
-}
 .parrafo{
-   
-    width: 65vw;
+    width: 100%;
     margin:auto;
 }
 .parrafo p{
     text-align: center;
+}
+
+.descripcion {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5%;
+    color: white;
 }
 
 .descripcion h2{
@@ -142,9 +162,11 @@ body div.imagen{
     body h1{
         font-size: 25px;
         margin-bottom: 20px;
+        text-align: center;
     }
     body p{
         font-size: 15px;
+        text-align: center;
     }
     header .input{
         width: 12em;
@@ -159,13 +181,14 @@ body div.imagen{
     }
     .parrafo p{
      font-size: 15px;
+     text-align: center;
     }
     .precio, .opciones, .cantidad{
         margin-bottom: 20px;
     }
     
 }
-@media (min-width: 769px){
+@media (min-width: 768px){
     .imagen{
         justify-content:flex-start;
     }
@@ -178,10 +201,18 @@ body div.imagen{
     }
    
    
-    .remera3, .remera4{
-        display: block;
+    .remera1, .remera2{
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    
     }
     .imagenes div{
+        display: none;
         width: 10em;
         height: 10em;
         border-style: solid;
@@ -200,10 +231,17 @@ body div.imagen{
         display: none;
     }
     
-    
+    .descripcion {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        padding: 10px;
+        margin-top: 5%;
+        color: white;
+    }
 
     .descripcion2 h2{
-        font-size: 20px;
+        font-size: 15px;
         text-align: center;
     }
     .datos2 input{
@@ -223,7 +261,8 @@ body div.imagen{
     .carrito2 button{
         padding: 5px;
         font-size: 20px;
-    
+        background-color: rgb(7, 101, 161);
+        color: white;
     }
    .remera3, .remera4{
       width: 100%;

@@ -45,23 +45,16 @@ main{
 .menu{
     width: 80vw;
     height: 75vh;
-    border-style: solid;
-    border-color: rgb(58, 56, 56);
-    border-width: 1px;
-    border-radius: 3%;
+  
 }
 .titulo{
-    display: flex;
-    justify-content: space-between;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: rgb(58, 56, 56);
-    
+    margin-bottom: 5%;
     
 }
 .titulo p{
     margin: 18px;
     display: none;
+
 }
 .menu div h1{
     padding-top: 5px;
@@ -71,6 +64,7 @@ main{
     font-size: 25px;
     font-weight: 10;
     color: rgb(58, 56, 56);
+    text-align: center;
 }
 .datos{
 
@@ -161,11 +155,12 @@ main{
     .errors{
        
     }
-    main{
+    main {
         display: flex;
-    
-       flex-wrap: nowrap;
-       
+        flex-wrap: nowrap;
+        padding: 3%;
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
     }
     .ventana{
         display: flex;
