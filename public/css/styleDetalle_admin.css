@@ -53,12 +53,22 @@ header .form .submit{
     margin-left: 10px;
     
 }
-.botones{
+.botones {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.botones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
+
 
 .editar2{
     background-color: rgb(7, 101, 161);
@@ -113,9 +123,12 @@ body div.imagen{
 
 .remera1, .remera2{
     position: absolute;
-    width: 49vw;
-    height: 54vw;
-
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .carrito{
@@ -136,7 +149,16 @@ body div.imagen{
     text-align: center;
    }
 
-.descripcion h2{
+   .descripcion {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.descripcion h2 {
     text-align: center;
     font-size: 15px;
 }
@@ -166,9 +188,11 @@ body div.imagen{
     body h1{
         font-size: 25px;
         margin-bottom: 20px;
+        text-align: center;
     }
     body p{
         font-size: 15px;
+        text-align: center;
     }
     header .input{
         width: 12em;
@@ -183,6 +207,7 @@ body div.imagen{
     }
     .parrafo p{
      font-size: 15px;
+     text-align: center;
     }
     .precio, .opciones, .cantidad{
         margin-bottom: 20px;
@@ -204,6 +229,9 @@ body div.imagen{
    
     .remera3, .remera4{
         display: block;
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
     }
     .imagenes div{
         width: 10em;
