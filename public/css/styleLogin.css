@@ -152,9 +152,6 @@ main{
     .titulo p{
         display: block;
     }
-    .errors{
-       
-    }
     main {
         display: flex;
         flex-wrap: nowrap;
