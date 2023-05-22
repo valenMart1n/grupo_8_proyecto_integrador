@@ -1,9 +1,13 @@
 const express = require("express");
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
+const cors = require('cors');
 
 
 const app = express();
+
+app.use(cors());
+
 
 const methodOverride =  require('method-override');
 
