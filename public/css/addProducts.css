@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 body {
     background-color: #ebebeb;
+    text-align: center;
 }
 
 h3 {
@@ -15,13 +17,13 @@ h3 {
 
 body main section div {
     font-size: 14px;
-    margin: 1%;
-    padding: 1%;
-    text-align: center;
+    padding: 0.5%;
 }
 
-@media (min-width: 768px) {
-    body main section div {
-        text-align: left;
-    }
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
