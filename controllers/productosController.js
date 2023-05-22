@@ -27,14 +27,14 @@ productosController = {
         }
     },
     listaProductos: async(req, res) => {
-        if(req.cookies.rango != undefined){
-            req.session.rango = req.cookies.rango;
+        if(req.session.rango == "admin"){
             let listaProductos = await db.Product.findAll();
-        return res.render("list", { listaProductos, req: req });
-        }else{
-            let listaProductos = await db.Product.findAll();
-        return res.render("list", { listaProductos, req: req });
-        }
+            return res.render("list", { listaProductos, req: req });
+
+       }else if(req.session.rango != "admin"){
+        let listaProductos = await db.Product.findAll();
+        return res.render("list_admin", { listaProductos, req: req });
+       }
     },
     addProducts: (req, res) => {
         if(req.cookies.rango != undefined){
@@ -81,7 +81,7 @@ productosController = {
             color: req.body.color,
             precio: req.body.precio,
             categoria: req.body.categoria,
-            imagen: req.file ? req.file.filename : "default-image.png"
+            imagen: req.file ? req.file.filename : await db.Product.findOne({where: {producto_id: id}}).then(resultado => resultado.dataValues.imagen)
             },
             {
                 where: {producto_id : id}
